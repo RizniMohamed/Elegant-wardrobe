@@ -12,12 +12,13 @@
         hideReturnPolicy();
         hideAboutUs();
         hidePP();
+        hideAdmin();
 
 
     }
 
     function hideTC() {
-        localStorage.setItem("rc", "hidden");
+        localStorage.setItem("tc", "hidden");
         let model = document.getElementById('tcPage');
         model.classList.replace('block', 'hidden')
     }

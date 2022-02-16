@@ -69,6 +69,9 @@
     <div id="ppPage" class="hidden">
         <?php require_once "./pages/pp.php" ?>
     </div>
+    <div id="adminPage" class="hidden">
+        <?php require_once "./pages/admin.php" ?>
+    </div>
 
     <!-- Components -->
     <div id="loginModel" class="hidden">
@@ -107,6 +110,11 @@
         if (localStorage.getItem("order") == "block") showOrder();
         if (localStorage.getItem("men") == "block") showMen();
         if (localStorage.getItem("kid") == "block") showKid();
+        if (localStorage.getItem("aboutUs") == "block") showAboutUs();
+        if (localStorage.getItem("pp") == "block") showPP();
+        if (localStorage.getItem("tc") == "block") showTC();
+        if (localStorage.getItem("returnPolicy") == "block") showReturnPolicy();
+        if (localStorage.getItem("admin") == "block") showAdmin();
 
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);

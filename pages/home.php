@@ -16,6 +16,7 @@
         hideReturnPolicy();
         hideTC();
         hidePP();
+        hideAdmin();
 
 
     }

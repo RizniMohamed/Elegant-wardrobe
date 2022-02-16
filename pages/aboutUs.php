@@ -12,7 +12,7 @@
         hideReturnPolicy();
         hideTC();
         hidePP();
-
+        hideAdmin();
     }
 
     function hideAboutUs() {

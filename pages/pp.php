@@ -1,6 +1,6 @@
 <script>
     function showPP() {
-        localStorage.setItem("tc", "block");
+        localStorage.setItem("pp", "block");
         let model = document.getElementById('ppPage');
         model.classList.replace('hidden', 'block')
         hideHome();
@@ -12,11 +12,12 @@
         hideReturnPolicy();
         hideAboutUs()
         hideTC();
+        hideAdmin();
 
     }
 
     function hidePP() {
-        localStorage.setItem("rc", "hidden");
+        localStorage.setItem("pp", "hidden");
         let model = document.getElementById('ppPage');
         model.classList.replace('block', 'hidden')
     }

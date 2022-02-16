@@ -12,6 +12,8 @@
         hideReturnPolicy();
         hideTC();
         hidePP();
+        hideAdmin();
+
     }
 
     function hideWomen() {
