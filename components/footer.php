@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <body>
     <!-- footer -->
     <div class="bg-gray-800 h-96 flex mt-5 border-box p-14 flex">
@@ -36,7 +33,7 @@
         <div class=" flex flex-col ml-16">
             <h3 class="text-white font-bold cursor-default">My Account</h3>
             <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-5">My profile</a>
-            <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-2">Orders</a>
+            <a href="#" onclick="hideHome();hideCart();hideWomen();showOrder()" class="text-white hover:text-gray-400 cursor-pointer mt-2">Orders</a>
         </div>
 
         <div class="flex justify-center w-2/5 h-12 self-center">
@@ -47,5 +44,3 @@
     </div>
 
 </body>
-
-</html>

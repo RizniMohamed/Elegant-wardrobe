@@ -1,11 +1,11 @@
     <script>
-        function showLogin() {
-            let model = document.getElementById('loginModel');
+        function showRegister() {
+            let model = document.getElementById('registerModel');
             model.classList.replace('hidden', 'block')
         }
 
-        function hideLogin() {
-            let model = document.getElementById('loginModel');
+        function hideRegister() {
+            let model = document.getElementById('registerModel');
             model.classList.replace('block', 'hidden')
         }
     </script>
@@ -24,7 +24,7 @@
                                 <div class="flex justify-center">
                                     <span class="text-black font-black text-3xl">Elegant wardrobe</span>
                                 </div>
-                                <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Sign in</h2>
+                                <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Sign up</h2>
                             </div>
                             <form class=" space-y-6" action="#" method="POST">
                                 <div class="rounded-md shadow-sm -space-y-px">
@@ -34,16 +34,19 @@
                                     <div>
                                         <input id="password" name="password" type="password" autocomplete="current-password" required class="mt-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="Password">
                                     </div>
+                                    <div>
+                                        <input id="password" name="password" type="password" autocomplete="current-password" required class="mt-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="Confirm password">
+                                    </div>
                                 </div>
 
                                 <div>
-                                    <button onclick="hideLogin()" type="submit" class=" w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
-                                        Sign in
+                                    <button onclick="hideRegister()" type="submit" class=" w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
+                                        Sign up
                                     </button>
                                 </div>
 
                                 <div>
-                                    <a onclick="showRegister();hideLogin()" href="#" class="text-blue-400 hover:text-blue-700 font-bold justify-center flex">Don't you have an account? Sign up</a>
+                                    <a onclick="showLogin();hideRegister()" href="#" class="text-blue-400 hover:text-blue-700 font-bold justify-center flex">Do you have an account? Sign in</a>
                                 </div>
                             </form>
                         </div>

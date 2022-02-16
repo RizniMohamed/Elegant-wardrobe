@@ -1,11 +1,11 @@
     <script>
-        function showLogin() {
-            let model = document.getElementById('loginModel');
+        function showCreditCard() {
+            let model = document.getElementById('creditCardModel');
             model.classList.replace('hidden', 'block')
         }
 
-        function hideLogin() {
-            let model = document.getElementById('loginModel');
+        function hideCreditCard() {
+            let model = document.getElementById('creditCardModel');
             model.classList.replace('block', 'hidden')
         }
     </script>
@@ -24,26 +24,21 @@
                                 <div class="flex justify-center">
                                     <span class="text-black font-black text-3xl">Elegant wardrobe</span>
                                 </div>
-                                <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Sign in</h2>
+                                <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Card Payment</h2>
                             </div>
                             <form class=" space-y-6" action="#" method="POST">
                                 <div class="rounded-md shadow-sm -space-y-px">
-                                    <div>
-                                        <input id="email-address" name="email" type="email" autocomplete="email" required class=" w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md  sm:text-sm" placeholder="Email address">
-                                    </div>
-                                    <div>
-                                        <input id="password" name="password" type="password" autocomplete="current-password" required class="mt-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="Password">
+                                    <input id="ccNumber" name="ccNumber" type="number" autocomplete="cc-number" required class="mb-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md  sm:text-sm" placeholder="Card number">
+                                    <div class="flex">
+                                        <input id="ccExp" name="ccExp" type="month" autocomplete="cc-exp" required class="mt-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm mr-2" placeholder="Expire date">
+                                        <input id="ccCVC" name="ccCVC" type="number" autocomplete="cc-csc" required class="mt-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="CVC">
                                     </div>
                                 </div>
 
                                 <div>
-                                    <button onclick="hideLogin()" type="submit" class=" w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
-                                        Sign in
+                                    <button onclick="hideCreditCard()" type="submit" class=" w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
+                                        Pay
                                     </button>
-                                </div>
-
-                                <div>
-                                    <a onclick="showRegister();hideLogin()" href="#" class="text-blue-400 hover:text-blue-700 font-bold justify-center flex">Don't you have an account? Sign up</a>
                                 </div>
                             </form>
                         </div>
