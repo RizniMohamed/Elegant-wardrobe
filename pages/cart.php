@@ -1,10 +1,12 @@
 <script>
     function showCart() {
+        localStorage.setItem("cart", "block");
         let model = document.getElementById('cartPage');
         model.classList.replace('hidden', 'block')
     }
 
     function hideCart() {
+        localStorage.setItem("cart", "hidden");
         let model = document.getElementById('cartPage');
         model.classList.replace('block', 'hidden')
     }

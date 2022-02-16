@@ -25,9 +25,9 @@
 
     <!-- Women Drop down -->
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" id="womenDropdown" class="hidden z-50 pt-3 -translate-y-4 absolute box-border translate-x-52  ml-1 rounded-b-lg bg-gray-800 shadow-xl flex w-min flex-col ">
-        <input type="submit" name="btnClothing" class="px-5 my-2 font-bold text-sm text-white hover:text-gray-400 cursor-pointer text-left" value="Clothing">
-        <input type="submit" name="btnFootwear" class="px-5      font-bold text-sm text-white hover:text-gray-400 cursor-pointer text-left" value="Footwear">
-        <input type="submit" name="btnAccessories" class="px-5 my-2 font-bold text-sm text-white hover:text-gray-400 cursor-pointer text-left" value="Accessories">
+        <input onclick="hideOrder();hideHome();hideCart();showWomen();" type="submit" name="btnClothing" class="px-5 my-2 font-bold text-sm text-white hover:text-gray-400 cursor-pointer text-left" value="Clothing">
+        <input onclick="hideOrder();hideHome();hideCart();showWomen();" type="submit" name="btnFootwear" class="px-5      font-bold text-sm text-white hover:text-gray-400 cursor-pointer text-left" value="Footwear">
+        <input onclick="hideOrder();hideHome();hideCart();showWomen();" type="submit" name="btnAccessories" class="px-5 my-2 font-bold text-sm text-white hover:text-gray-400 cursor-pointer text-left" value="Accessories">
     </form>
 
     <!-- men Drop down -->

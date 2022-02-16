@@ -1,10 +1,12 @@
 <script>
     function showOrder() {
+        localStorage.setItem("order", "block");
         let model = document.getElementById('orderPage');
         model.classList.replace('hidden', 'block')
     }
 
     function hideOrder() {
+        localStorage.setItem("order", "hidden");
         let model = document.getElementById('orderPage');
         model.classList.replace('block', 'hidden')
     }
@@ -20,7 +22,7 @@
             Orders
         </h1>
 
-        
+
         <div class=" mt-1  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400">
             <p class="w-full ml-10 text-md font-bold ">ID</p>
             <p class="w-full ml-10 text-md font-bold ">Name</p>

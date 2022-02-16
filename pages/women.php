@@ -1,10 +1,12 @@
 <script>
     function showWomen() {
+        localStorage.setItem("women", "block");
         let model = document.getElementById('womenPage');
         model.classList.replace('hidden', 'block')
     }
 
     function hideWomen() {
+        localStorage.setItem("women", "hidden");
         let model = document.getElementById('womenPage');
         model.classList.replace('block', 'hidden')
     }

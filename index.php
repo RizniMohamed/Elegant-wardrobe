@@ -53,9 +53,31 @@
     <div id="cartPage" class="hidden">
         <?php require_once "./pages/cart.php" ?>
     </div>
-    <div id="womenPage" class="block">
+    <div id="womenPage" class="hidden">
         <?php require_once "./pages/women.php" ?>
     </div>
+
+    <script>
+        showHome();
+        if (localStorage.getItem("women") == "block") {
+            hideHome();
+            hideOrder();
+            hideCart();
+            showWomen();
+        }
+        if (localStorage.getItem("cart") == "block") {
+            hideHome();
+            hideOrder();
+            hideWomen();
+            showCart();
+        }
+        if (localStorage.getItem("order") == "block") {
+            hideHome();
+            hideCart();
+            hideWomen();
+            showOrder();
+        }
+    </script>
 
 
     <!-- Components -->
