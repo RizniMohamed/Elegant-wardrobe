@@ -3,6 +3,16 @@
         localStorage.setItem("order", "block");
         let model = document.getElementById('orderPage');
         model.classList.replace('hidden', 'block')
+        hideCart();
+        hideKid();
+        hideMen();
+        hideHome();
+        hideWomen();
+        hideAboutUs();
+        hideReturnPolicy();
+        hideTC();
+        hidePP();
+
     }
 
     function hideOrder() {

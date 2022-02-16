@@ -3,6 +3,16 @@
         localStorage.setItem("cart", "block");
         let model = document.getElementById('cartPage');
         model.classList.replace('hidden', 'block')
+        hideHome();
+        hideKid();
+        hideMen();
+        hideOrder();
+        hideWomen();
+        hideAboutUs();
+        hideReturnPolicy();
+        hideTC();
+        hidePP();
+
     }
 
     function hideCart() {

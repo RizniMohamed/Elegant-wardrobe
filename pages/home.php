@@ -2,7 +2,25 @@
     function showHome() {
         let model = document.getElementById('homePage');
         model.classList.replace('hidden', 'block')
+
     }
+
+    function showHomeOnly() {
+        showHome();
+        hideCart();
+        hideKid();
+        hideMen();
+        hideOrder();
+        hideWomen();
+        hideAboutUs();
+        hideReturnPolicy();
+        hideTC();
+        hidePP();
+
+
+    }
+
+
 
     function hideHome() {
         let model = document.getElementById('homePage');
@@ -23,15 +41,12 @@
         <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
             <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="1" aria-label="Slide 1"></button>
-            <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="2" aria-label="Slide 1"></button>
         </div>
 
         <!-- Inner -->
         <div class="carousel-inner relative w-full overflow-hidden">
+
             <div class="carousel-item active relative float-left w-full">
-                <img src="https://www.nolimit.lk/storage/activewaer-web-add.jpg" class="block w-full" alt="Wild Landscape" />
-            </div>
-            <div class="carousel-item relative float-left w-full">
                 <img src="https://www.nolimit.lk/storage/womens-web.jpg" class=" block w-full" alt="Camera" />
             </div>
             <div class="carousel-item relative float-left w-full">
@@ -54,11 +69,17 @@
     <!-- Categories  -->
     <div class="flex flex-col items-center ">
         <h1 class="font-bold text-4xl my-10">Categories</h1>
-        <div class="flex">
-            <img onclick="hideCart();hideHome();hideOrder();showWomen();"  src="https://www.nolimit.lk/storage/banners/Ladies.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 cursor-pointer" alt="">
-            <img onclick="hideCart();hideHome();hideOrder();showWomen();"  src="https://www.nolimit.lk/storage/banners/Gents.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 mx-7 cursor-pointer" alt="">
-            <img onclick="hideCart();hideHome();hideOrder();showWomen();"  src="https://www.nolimit.lk/storage/banners/Kids.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 cursor-pointer" alt="">
-        </div>
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" class="flex">
+            <button type="submit" name="btnWomenClothing">
+                <img onclick="showWomen();" src="https://www.nolimit.lk/storage/banners/Ladies.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 cursor-pointer" alt="">
+            </button>
+            <button type="submit" name="btnMenClothing">
+                <img onclick="showMen();" src="https://www.nolimit.lk/storage/banners/Gents.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 mx-7 cursor-pointer" alt="">
+            </button>
+            <button type="submit" name="btnKidClothing">
+                <img onclick="showKid();" src="https://www.nolimit.lk/storage/banners/Kids.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 cursor-pointer" alt="">
+            </button>
+        </form>
 
     </div>
 

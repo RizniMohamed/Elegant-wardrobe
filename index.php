@@ -33,14 +33,9 @@
     </style>
 
 
-
-
-
-
 </head>
 
 <body class="scrollbar">
-
     <?php require_once "./components/header.php" ?>
 
     <!-- Pages -->
@@ -56,29 +51,24 @@
     <div id="womenPage" class="hidden">
         <?php require_once "./pages/women.php" ?>
     </div>
-
-    <script>
-        showHome();
-        if (localStorage.getItem("women") == "block") {
-            hideHome();
-            hideOrder();
-            hideCart();
-            showWomen();
-        }
-        if (localStorage.getItem("cart") == "block") {
-            hideHome();
-            hideOrder();
-            hideWomen();
-            showCart();
-        }
-        if (localStorage.getItem("order") == "block") {
-            hideHome();
-            hideCart();
-            hideWomen();
-            showOrder();
-        }
-    </script>
-
+    <div id="menPage" class="hidden">
+        <?php require_once "./pages/men.php" ?>
+    </div>
+    <div id="kidPage" class="hidden">
+        <?php require_once "./pages/kid.php" ?>
+    </div>
+    <div id="aboutUsPage" class="hidden">
+        <?php require_once "./pages/aboutUs.php" ?>
+    </div>
+    <div id="returnPolicy" class="hidden">
+        <?php require_once "./pages/returnPolicy.php" ?>
+    </div>
+    <div id="tcPage" class="hidden">
+        <?php require_once "./pages/tc.php" ?>
+    </div>
+    <div id="ppPage" class="hidden">
+        <?php require_once "./pages/pp.php" ?>
+    </div>
 
     <!-- Components -->
     <div id="loginModel" class="hidden">
@@ -99,10 +89,25 @@
     <div id="errorModel" class="hidden">
         <?php require_once "./components/error.php" ?>
     </div>
+    <div id="contactUsModel" class="hidden">
+        <?php require_once "./components/contactUs.php" ?>
+    </div>
+    <div id="profileModel" class="hidden">
+        <?php require_once "./components/profile.php" ?>
+    </div>
 
     <?php require_once "./components/footer.php" ?>
 
+
+    <!-- Page router  -->
     <script>
+        showHome();
+        if (localStorage.getItem("women") == "block") showWomen();
+        if (localStorage.getItem("cart") == "block") showCart();
+        if (localStorage.getItem("order") == "block") showOrder();
+        if (localStorage.getItem("men") == "block") showMen();
+        if (localStorage.getItem("kid") == "block") showKid();
+
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }

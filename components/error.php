@@ -1,6 +1,8 @@
     <script>
-        function showError() {
+        function showError(msg) {
             let model = document.getElementById('errorModel');
+            let text = document.getElementById('errorMsg');
+            text.innerText = msg
             model.classList.replace('hidden', 'block')
             setTimeout(() => {
                 model.classList.replace('block', 'hidden')
@@ -14,7 +16,7 @@
                 <div class="min-h-full flex justify-center py-4 px-8  ">
                     <div class="flex">
                         <i class="fa-regular fa-face-frown text-bold text-2xl mr-2"></i>
-                        <h2 class=" text-center text-xl font-bold text-gray-900">Error occured</h2>
+                        <h2 id="errorMsg" class=" text-center text-xl font-bold text-gray-900"></h2>
                     </div>
                 </div>
             </div>

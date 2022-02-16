@@ -16,24 +16,26 @@
 
         <div class=" flex flex-col ml-16">
             <h3 class="text-white font-bold cursor-default">Useful Links</h3>
-            <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-5">About us</a>
-            <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-2">Return policy</a>
-            <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-2">Terms and condition</a>
-            <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-2">Privacy policy</a>
+            <a onclick="showAboutUs()" class="text-white hover:text-gray-400 cursor-pointer cursor-pointer mt-5">About us</a>
+            <a onclick="showReturnPolicy()" class="text-white hover:text-gray-400 cursor-pointer cursor-pointer mt-2">Return policy</a>
+            <a onclick="showTC()" class="text-white hover:text-gray-400 cursor-pointer cursor-pointer mt-2">Terms and condition</a>
+            <a onclick="showPP()" class="text-white hover:text-gray-400 cursor-pointer cursor-pointer mt-2">Privacy policy</a>
         </div>
 
         <div class=" flex flex-col ml-16">
             <h3 class="text-white font-bold cursor-default">Whats In Store</h3>
-            <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-5">Women</a>
-            <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-2">Men</a>
-            <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-2">Kid</a>
+            <form class="flex flex-col items-start" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                <input onclick="showWomen();" type="submit" name="btnWomenClothing" class="text-white hover:text-gray-400 cursor-pointer cursor-pointer mt-5 bg-gray-800" value="Women">
+                <input onclick="showMen();" type="submit" name="btnMenClothing" class="text-white hover:text-gray-400 cursor-pointer cursor-pointer mt-2 bg-gray-800" value="Men">
+                <input onclick="showKid();" type="submit" name="btnKidClothing" class="text-white hover:text-gray-400 cursor-pointer cursor-pointer mt-2 bg-gray-800" value="Kid">
+            </form>
         </div>
 
 
         <div class=" flex flex-col ml-16">
             <h3 class="text-white font-bold cursor-default">My Account</h3>
-            <a href="#" class="text-white hover:text-gray-400 cursor-pointer mt-5">My profile</a>
-            <a href="#" onclick="hideHome();hideCart();hideWomen();showOrder()" class="text-white hover:text-gray-400 cursor-pointer mt-2">Orders</a>
+            <a onclick="showProfile()" class="text-white cursor-pointer hover:text-gray-400 cursor-pointer mt-5">My profile</a>
+            <a onclick="showOrder()" class="text-white cursor-pointer hover:text-gray-400 cursor-pointer mt-2">Orders</a>
         </div>
 
         <div class="flex justify-center w-2/5 h-12 self-center">
