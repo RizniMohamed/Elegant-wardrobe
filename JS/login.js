@@ -14,7 +14,7 @@ function loginValidate() {
 }
 
 function getDBStatus() {
-    if ( (sessionStorage.getItem('db_status') != null) && (sessionStorage.getItem('db_status') != 0)) {
+    if ((sessionStorage.getItem('db_status') != null) && (sessionStorage.getItem('db_status') != 0)) {
         return parseInt(sessionStorage.getItem('db_status'))
     }
     return false;
@@ -24,17 +24,18 @@ function isLogin() {
     if (sessionStorage.getItem('login') != null && (sessionStorage.getItem('login') != false)) {
         if (JSON.parse(sessionStorage.getItem('login'))['status']) return true;
     }
-    if (getDBStatus() == 404){ //Not found
-        sessionStorage.setItem('db_status','0')
+    if (getDBStatus() == 404) { //Not found
+        sessionStorage.setItem('db_status', '0')
         showError("Invalid Credintials");
         showLogin();
     }
-        
+
     return false
 }
 
 function logout() {
     sessionStorage.setItem('login', false)
     showHomeOnly();
+    window.location.reload();
 }
 

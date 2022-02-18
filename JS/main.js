@@ -16,6 +16,7 @@ function router() {
 //task process
 function task_status() {
     if (sessionStorage.getItem("task") == "register") registerStatus();
+    if (sessionStorage.getItem("task") == "profile") profileStatus();
 
 }
 

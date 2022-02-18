@@ -21,13 +21,17 @@ function signupValidate() {
 }
 
 function registerStatus() {
-    if (getDBStatus() == 200){
-        showHomeOnly();
+    if (getDBStatus() == 200){ //succcess
         showSuccess("User created successfully")
+        showLogin();
     }
-    if (getDBStatus() == 400) {
+    if (getDBStatus() == 400) { // bad request
         showRegister();
         showError("Invalid input values")
+    }
+    if (getDBStatus() == 403) { // foribiden
+        showRegister();
+        showError("User exits with this email")
     }
 
     sessionStorage.setItem('db_status', '0')

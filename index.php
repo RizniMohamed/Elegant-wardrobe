@@ -98,6 +98,7 @@
     <script src="./JS/login.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/register.js"></script>
+    <script src="./JS/profile.js"></script>
     <script>
         router();
         task_status();
