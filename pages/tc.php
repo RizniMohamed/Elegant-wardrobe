@@ -1,6 +1,6 @@
 <script>
     function showTC() {
-        localStorage.setItem("tc", "block");
+        sessionStorage.setItem("currentPage", "tc");
         let model = document.getElementById('tcPage');
         model.classList.replace('hidden', 'block')
         hideHome();
@@ -18,7 +18,6 @@
     }
 
     function hideTC() {
-        localStorage.setItem("tc", "hidden");
         let model = document.getElementById('tcPage');
         model.classList.replace('block', 'hidden')
     }

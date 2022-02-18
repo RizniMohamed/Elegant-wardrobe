@@ -1,6 +1,6 @@
 <script>
     function showMen() {
-        localStorage.setItem("men", "block");
+        sessionStorage.setItem("currentPage", "men");
         let model = document.getElementById('menPage');
         model.classList.replace('hidden', 'block')
         hideCart();
@@ -17,7 +17,6 @@
     }
 
     function hideMen() {
-        localStorage.setItem("men", "hidden");
         let model = document.getElementById('menPage');
         model.classList.replace('block', 'hidden')
     }

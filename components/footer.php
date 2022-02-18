@@ -34,8 +34,8 @@
 
         <div class=" flex flex-col ml-16">
             <h3 class="text-white font-bold cursor-default">My Account</h3>
-            <a onclick="showProfile()" class="text-white cursor-pointer hover:text-gray-400 cursor-pointer mt-5">My profile</a>
-            <a onclick="showOrder()" class="text-white cursor-pointer hover:text-gray-400 cursor-pointer mt-2">Orders</a>
+            <a onclick="isLogin()?showProfile():showLogin()" class="text-white cursor-pointer hover:text-gray-400 cursor-pointer mt-5">My profile</a>
+            <a onclick="isLogin()?showOrder():showLogin();" class="text-white cursor-pointer hover:text-gray-400 cursor-pointer mt-2">Orders</a>
         </div>
 
         <div class="flex justify-center w-2/5 h-12 self-center">

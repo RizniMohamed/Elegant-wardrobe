@@ -1,6 +1,6 @@
 <script>
     function showCart() {
-        localStorage.setItem("cart", "block");
+        sessionStorage.setItem("currentPage", "cart");
         let model = document.getElementById('cartPage');
         model.classList.replace('hidden', 'block')
         hideHome();
@@ -17,7 +17,6 @@
     }
 
     function hideCart() {
-        localStorage.setItem("cart", "hidden");
         let model = document.getElementById('cartPage');
         model.classList.replace('block', 'hidden')
     }

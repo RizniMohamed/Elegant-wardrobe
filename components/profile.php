@@ -24,12 +24,13 @@
                                 <span class="text-black font-black text-3xl">Elegant wardrobe</span>
                                 <img class=" mt-5 rounded-full w-32 h-32 border border-gray-600 p-1 shadow-xl hover:bg-gray-200 cursor-pointer flex self-center block" src="https://cdn1.iconfinder.com/data/icons/user-interface-664/24/User-512.png" alt="prfile">
                             </div>
-                            <form onsubmit="showSuccess('Profile updated successfully');" class=" mb-5 " action="#" method="#">
+                            <form  class=" mb-5 " action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
                                 <div class="rounded-md shadow-sm flex flex-col">
-                                    <input class="p-2 mb-2 rounded-md  " type="text" name="name" id="name" placeholder="Name" required>
-                                    <input class="p-2 mb-2 rounded-md  " type="email" name="email" id="email" placeholder="Email address" required>
-                                    <input class="p-2 mb-2 rounded-md  " type="text" name="password" id="password" placeholder="password" required>
+                                    <input class="p-2 mb-2 rounded-md  " type="text" name="name" id="name" placeholder="Name">
+                                    <input class="p-2 mb-2 rounded-md  " type="email" name="email" id="email" placeholder="Email address">
+                                    <input class="p-2 mb-2 rounded-md  " type="text" name="password" id="password" placeholder="password">
                                     <input type="submit" value="Update" class="mt-2 cursor-pointer w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
+                                    <input onclick="logout()" type="submit" value="Logout" class="mt-2 cursor-pointer w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
                                 </div>
                             </form>
                         </div>

@@ -1,6 +1,6 @@
 <script>
     function showReturnPolicy() {
-        localStorage.setItem("returnPolicy", "block");
+        sessionStorage.setItem("currentPage", "returnpolicy");
         let model = document.getElementById('returnPolicy');
         model.classList.replace('hidden', 'block')
         hideHome();
@@ -17,7 +17,6 @@
     }
 
     function hideReturnPolicy() {
-        localStorage.setItem("returnPolicy", "hidden");
         let model = document.getElementById('returnPolicy');
         model.classList.replace('block', 'hidden')
     }

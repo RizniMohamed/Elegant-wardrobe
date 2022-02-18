@@ -1,6 +1,6 @@
 <script>
     function showOrder() {
-        localStorage.setItem("order", "block");
+        sessionStorage.setItem("currentPage", "order");
         let model = document.getElementById('orderPage');
         model.classList.replace('hidden', 'block')
         hideCart();
@@ -17,7 +17,6 @@
     }
 
     function hideOrder() {
-        localStorage.setItem("order", "hidden");
         let model = document.getElementById('orderPage');
         model.classList.replace('block', 'hidden')
     }

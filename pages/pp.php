@@ -1,6 +1,6 @@
 <script>
     function showPP() {
-        localStorage.setItem("pp", "block");
+        sessionStorage.setItem("currentPage", "pp");
         let model = document.getElementById('ppPage');
         model.classList.replace('hidden', 'block')
         hideHome();
@@ -17,7 +17,6 @@
     }
 
     function hidePP() {
-        localStorage.setItem("pp", "hidden");
         let model = document.getElementById('ppPage');
         model.classList.replace('block', 'hidden')
     }

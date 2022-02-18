@@ -1,6 +1,6 @@
 <script>
     function showAboutUs() {
-        localStorage.setItem("aboutUs", "block");
+        sessionStorage.setItem("currentPage", "aboutus");
         let model = document.getElementById('aboutUsPage');
         model.classList.replace('hidden', 'block')
         hideHome();
@@ -16,7 +16,6 @@
     }
 
     function hideAboutUs() {
-        localStorage.setItem("aboutUs", "hidden");
         let model = document.getElementById('aboutUsPage');
         model.classList.replace('block', 'hidden')
     }

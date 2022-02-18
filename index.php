@@ -8,34 +8,26 @@
 
     <title>Elegant wardrobe</title>
 
+    <!-- Tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- fontawsome icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- css  -->
+    <link rel="stylesheet" href="./Style/main.css">
 
-    <style>
-        .scrollbar::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        .scrollbar::-webkit-scrollbar-track {
-            background: white;
-        }
-
-        .scrollbar::-webkit-scrollbar-thumb {
-            background: lightblue;
-        }
-    </style>
 
 
 </head>
 
 <body class="scrollbar">
+
+
     <?php require_once "./components/header.php" ?>
 
     <!-- Pages -->
@@ -102,25 +94,14 @@
     <?php require_once "./components/footer.php" ?>
 
 
-    <!-- Page router  -->
+    <!-- Js -->
+    <script src="./JS/login.js"></script>
+    <script src="./JS/main.js"></script>
+    <script src="./JS/register.js"></script>
     <script>
-        showHome();
-        if (localStorage.getItem("women") == "block") showWomen();
-        if (localStorage.getItem("cart") == "block") showCart();
-        if (localStorage.getItem("order") == "block") showOrder();
-        if (localStorage.getItem("men") == "block") showMen();
-        if (localStorage.getItem("kid") == "block") showKid();
-        if (localStorage.getItem("aboutUs") == "block") showAboutUs();
-        if (localStorage.getItem("pp") == "block") showPP();
-        if (localStorage.getItem("tc") == "block") showTC();
-        if (localStorage.getItem("returnPolicy") == "block") showReturnPolicy();
-        if (localStorage.getItem("admin") == "block") showAdmin();
-
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
+        router();
+        task_status();
     </script>
-
 </body>
 
 </html>

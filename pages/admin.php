@@ -1,6 +1,6 @@
 <script>
     function showAdmin() {
-        localStorage.setItem("admin", "block");
+        sessionStorage.setItem("currentPage", "admin");
         let model = document.getElementById('adminPage');
         model.classList.replace('hidden', 'block')
         hideHome();
@@ -17,7 +17,6 @@
     }
 
     function hideAdmin() {
-        localStorage.setItem("admin", "hidden");
         let model = document.getElementById('adminPage');
         model.classList.replace('block', 'hidden')
     }

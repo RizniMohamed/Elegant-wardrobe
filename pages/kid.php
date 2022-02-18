@@ -1,6 +1,6 @@
 <script>
     function showKid() {
-        localStorage.setItem("kid", "block");
+        sessionStorage.setItem("currentPage", "kid");
         let model = document.getElementById('kidPage');
         model.classList.replace('hidden', 'block')
         hideCart();
@@ -17,7 +17,6 @@
     }
 
     function hideKid() {
-        localStorage.setItem("kid", "hidden");
         let model = document.getElementById('kidPage');
         model.classList.replace('block', 'hidden')
     }
