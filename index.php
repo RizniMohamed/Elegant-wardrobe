@@ -1,3 +1,7 @@
+<?php
+require_once "./PHP/config.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,20 +11,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Elegant wardrobe</title>
+    <link rel="icon" href="./Resource/logo.png" class="rounded-full">
 
     <!-- Tailwind css -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="./JS/tailwind/01.js"></script>
+    <link rel="stylesheet" href="./Style/import/01.css" />
+    <link rel="stylesheet" href="./Style/import/02.css" />
+    <link rel="stylesheet" href="./Style/import/03.css" />
+    <script src="./JS/tailwind/02.js"></script>
 
-    <!-- fontawsome icon -->
+    <!-- fontawsome icon (internet required) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css  -->
     <link rel="stylesheet" href="./Style/main.css">
 
+    <!-- Js for do operations with pre defiend functions -->
+    <script src="./JS/login.js"></script>
+    <script src="./JS/register.js"></script>
+    <script src="./JS/profile.js"></script>
 
 
 </head>
@@ -94,7 +103,7 @@
     <?php require_once "./components/footer.php" ?>
 
 
-    <!-- Js -->
+    <!-- Js for do operations with ids -->
     <script src="./JS/login.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/register.js"></script>

@@ -23,10 +23,21 @@ function task_status() {
 // Only show admin tab when admin logged in
 let navAdmin = document.getElementById('navAdmin')
 if (isLogin()) {
+    if (JSON.parse(sessionStorage.getItem('login'))['image'] == "") {
+        document.getElementById('dpImage').src = 'https://cdn1.iconfinder.com/data/icons/user-interface-664/24/User-512.png'
+        document.getElementById('profile_dp').src = 'https://cdn1.iconfinder.com/data/icons/user-interface-664/24/User-512.png'
+    } else {
+        document.getElementById('dpImage').src = JSON.parse(sessionStorage.getItem('login'))['image']
+        document.getElementById('profile_dp').src = JSON.parse(sessionStorage.getItem('login'))['image']
+    }
+
     if (JSON.parse(sessionStorage.getItem('login'))['role'] == 'admin')
         navAdmin.classList.replace('hidden', 'block')
     else
         navAdmin.classList.replace('block', 'hidden')
+} else {
+    document.getElementById('dpImage').src = 'https://cdn1.iconfinder.com/data/icons/user-interface-664/24/User-512.png'
+    document.getElementById('profile_dp').src = 'https://cdn1.iconfinder.com/data/icons/user-interface-664/24/User-512.png'
 }
 
 //Prevent resubmission

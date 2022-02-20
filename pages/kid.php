@@ -37,12 +37,15 @@
             <?php
             if (isset($_POST['btnKidClothing'])) {
                 $_POST['btnKidClothing'] = null;
-                for ($i = 0; $i < 25; $i++) {
+                $sql = "SELECT * FROM product WHERE cat_id=3 AND subcat_id=1";
+                $result = $conn->query($sql);
+
+                while ($row = $result->fetch_assoc()) {
                     echo '
                    <div class="w-56 m-2 bg-gray-300 p-2 rounded-md">
-                        <img src="https://www.nolimit.lk/storage/6-57-540x600.jpg" class="w-52 h-56">
-                        <h5 class="mt-2 font-semibold">HUF & DEE Crew Neck Plain</h5>
-                        <h5 class="mt-1">LKR 1500</h5>
+                        <img src="' . $row['image'] . '" class="w-52 h-56">
+                        <h5 class="mt-2 font-semibold">' . $row['name'] . '</h5>
+                        <h5 class="mt-1">LKR ' . $row['unit_price'] . '</h5>
                         <button class="my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1">Add to cart</button>
                     </div>
                    ';
@@ -51,12 +54,15 @@
 
             if (isset($_POST['btnKidFootwear'])) {
                 $_POST['btnKidFootwear'] = null;
-                for ($i = 0; $i < 25; $i++) {
+                $sql = "SELECT * FROM product WHERE cat_id=3 AND subcat_id=2";
+                $result = $conn->query($sql);
+
+                while ($row = $result->fetch_assoc()) {
                     echo '
                    <div class="w-56 m-2 bg-gray-300 p-2 rounded-md">
-                        <img src="https://www.nolimit.lk/storage/toys-and-books2-0023-imgl1541-540x600.jpg" class="w-52 h-56">
-                        <h5 class="mt-2 font-semibold">HUF & DEE Crew Neck Plain</h5>
-                        <h5 class="mt-1">LKR 1500</h5>
+                        <img src="' . $row['image'] . '" class="w-52 h-56">
+                        <h5 class="mt-2 font-semibold">' . $row['name'] . '</h5>
+                        <h5 class="mt-1">LKR ' . $row['unit_price'] . '</h5>
                         <button class="my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1">Add to cart</button>
                     </div>
                    ';
@@ -65,12 +71,15 @@
 
             if (isset($_POST['btnKidAccessories'])) {
                 $_POST['btnKidAccessories'] = null;
-                for ($i = 0; $i < 25; $i++) {
+                $sql = "SELECT * FROM product WHERE cat_id=3 AND subcat_id=3";
+                $result = $conn->query($sql);
+
+                while ($row = $result->fetch_assoc()) {
                     echo '
                    <div class="w-56 m-2 bg-gray-300 p-2 rounded-md">
-                        <img src="https://www.nolimit.lk/storage/online-shoot-0172-imgl9754-540x600.jpg" class="w-52 h-56">
-                        <h5 class="mt-2 font-semibold">HUF & DEE Crew Neck Plain</h5>
-                        <h5 class="mt-1">LKR 1500</h5>
+                        <img src="' . $row['image'] . '" class="w-52 h-56">
+                        <h5 class="mt-2 font-semibold">' . $row['name'] . '</h5>
+                        <h5 class="mt-1">LKR ' . $row['unit_price'] . '</h5>
                         <button class="my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1">Add to cart</button>
                     </div>
                    ';

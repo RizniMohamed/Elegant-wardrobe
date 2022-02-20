@@ -22,8 +22,8 @@ function profileValidate() {
 
     } else {
         sessionStorage.setItem('task', "profile");
-        // hideProfile();
-        // return true;
+        hideProfile();
+        return true;
     }
     return false;
 }
@@ -32,13 +32,21 @@ function profileStatus() {
     if (getDBStatus() == 200) { //succcess
         showSuccess("User updated successfully")
     }
+    if (getDBStatus() == 403) { // forbbiden request
+        showProfile();
+        showError("Email already taken")
+    }
     if (getDBStatus() == 400) { // bad request
         showProfile();
         showError("Invalid input values")
     }
-
     sessionStorage.setItem('db_status', '0')
     sessionStorage.setItem('task', "none");
 
+}
 
+function DP() {
+    if (isLogin()) {
+    } else {
+    }
 }

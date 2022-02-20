@@ -18,8 +18,8 @@
                 <input class="px-2 rounded w-2/5 mr-5" type="text" placeholder="&#xF002; Search" id="txtsearch" name="txtsearch" style="font-family:Arial, FontAwesome">
                 <i onclick=" isLogin() ?showCart(): showLogin();" class="fa-solid fa-cart-shopping text-white cursor-pointer  mr-5 animate-bounce"></i>
 
-                <button onclick="isLogin()?showProfile():showLogin()" type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                    <img id="dPImage" src="https://cdn1.iconfinder.com/data/icons/user-interface-664/24/User-512.png" class="h-8 w-8 rounded-full bg-gray-400 p-1 hover:bg-gray-500" alt="DPIMAGE">
+                <button onclick="isLogin()?showProfile():showLogin();" type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <img id="dpImage" src="" class="h-8 w-8 rounded-full bg-gray-400 p-0.5 hover:bg-gray-500" alt="DPIMAGE">
                 </button>
 
             </div>
@@ -71,16 +71,8 @@
             tab.addEventListener('mouseover', () => showDropdown(id))
             tab.addEventListener('mouseout', () => hideDropdown(id))
         })
-    </script>
 
-    <?php
-
-    ?>
-    <script>
-        function setDPImage(id) {
-            let dPImage = document.getElementById("dPImage");
-            dPImage.src = ("https://drive.google.com/uc?export=view&id=" + id)
-        }
+        
     </script>
 
 </body>
