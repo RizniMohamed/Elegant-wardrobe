@@ -17,7 +17,7 @@ function router() {
 function task_status() {
     if (sessionStorage.getItem("task") == "register") registerStatus();
     if (sessionStorage.getItem("task") == "profile") profileStatus();
-
+    if (sessionStorage.getItem("task") == "cart") cartStatus();
 }
 
 // Only show admin tab when admin logged in

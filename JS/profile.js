@@ -44,9 +44,3 @@ function profileStatus() {
     sessionStorage.setItem('task', "none");
 
 }
-
-function DP() {
-    if (isLogin()) {
-    } else {
-    }
-}

@@ -12,6 +12,8 @@ function addToCart(id, size_id, quantitiy_id, name, unit_price) {
             "quantity": quantity,
             "name": name,
             "unit_price": unit_price,
+            "user_id": JSON.parse(sessionStorage.getItem('login'))['user_id'],
+            "tot_price": 0,
         });
         final_cart_list = [...new Map(cart.map(v => [v.id, v])).values()] // prevent duplicate entries
         sessionStorage.setItem('cart', JSON.stringify(final_cart_list));
@@ -28,9 +30,8 @@ function addToCart(id, size_id, quantitiy_id, name, unit_price) {
 }
 
 //Display cart list
-var cart_items = document.getElementById('cart_items');
 
-function createItem(product_name, product_quantity, product_price) {
+function createItem(product_name, product_unitPrice, product_quantity, product_price) {
     const div = document.createElement("div");
     div.className = " mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default"
 
@@ -38,6 +39,11 @@ function createItem(product_name, product_quantity, product_price) {
     name.className = "w-full ml-10 text-md font-semibold "
     const text_name = document.createTextNode(product_name);
     name.appendChild(text_name);
+
+    const unit_price = document.createElement("p");
+    unit_price.className = "w-full ml-10 text-md font-semibold "
+    const text_unit_price = document.createTextNode(product_unitPrice);
+    unit_price.appendChild(text_unit_price);
 
     const quantity = document.createElement("p");
     quantity.className = "w-full ml-10 text-md font-semibold "
@@ -50,33 +56,62 @@ function createItem(product_name, product_quantity, product_price) {
     price.appendChild(text_price);
 
     div.appendChild(name)
+    div.appendChild(unit_price)
     div.appendChild(quantity)
     div.appendChild(price)
 
     cart_items.appendChild(div);
 }
+
+var cart_items = document.getElementById('cart_items');
 var cart_list = JSON.parse(sessionStorage.getItem('cart'));
-var cart_total_price = 0;
-if (cart_list != null) {
-    cart_list.forEach(e => {
-        createItem(e.name, e.quantity, e.unit_price);
-        cart_total_price = parseInt(cart_total_price) + parseInt(e.unit_price)
-
+var cart_total = 0;
+if (cart_list != null && cart_items != null) {
+    cart_list.map(e => {
+        e.tot_price = (e.unit_price * e.quantity)
+        createItem(e.name, e.unit_price, e.quantity, e.tot_price);
+        cart_total += e.tot_price;
+        return e;
     });
+
+    createItem("Total", "", "", cart_total);
+
+    var cart_form = document.createElement("form");
+    cart_form.className = "bg-gray-600  mt-5 py-2 rounded-md hover:bg-gray-800"
+    cart_form.action = "/PHP/cart.php"
+    cart_form.method = "POST"
+
+    var cart_form_input = document.createElement("input");
+    cart_form_input.type = "submit"
+    cart_form_input.onsubmit = sessionStorage.setItem('task', "cart")
+    cart_form_input.name = "order"
+    cart_form_input.className = "cursor-pointer w-full text-white font-bold "
+    cart_form_input.value = "Order now"
+
+    var cart_form_input_temp = document.createElement("input");
+    cart_form_input_temp.type = "text"
+    cart_form_input_temp.name = "cart_order_list"
+    cart_form_input_temp.className = " hidden w-full text-white font-bold "
+    cart_form_input_temp.value = JSON.stringify(cart_list)
+
+    cart_form.appendChild(cart_form_input);
+    cart_form.appendChild(cart_form_input_temp);
+
+    cart_items.appendChild(cart_form);
 }
-createItem("Total", "", cart_total_price);
 
-var cart_form = document.createElement("form");
-cart_form.className = "bg-gray-600  mt-5 py-2 rounded-md hover:bg-gray-800"
-cart_form.action = "/index.php"
-cart_form.method = "POST"
 
-var cart_form_input = document.createElement("input");
-cart_form_input.type="submit"
-cart_form_input.name="order"
-cart_form_input.className ="w-full text-white font-bold "
-cart_form_input.value ="Order now"
+function cartStatus() {
+    if (getDBStatus() == 200) { //succcess
+        sessionStorage.removeItem('cart')
+        showHomeOnly();
+        showSuccess("Order added successfully")
+    }
+    if (getDBStatus() == 400) { // bad request
+        showCart();
+        showError("Invalid input values")
+    }
+    sessionStorage.setItem('db_status', '0')
+    sessionStorage.setItem('task', "none");
 
-cart_form.appendChild(cart_form_input);
-
-cart_items.appendChild(cart_form);
+}

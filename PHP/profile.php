@@ -30,10 +30,20 @@ function update_data($conn, $name, $email, $password, $image)
     if ($conn->query($sql) === TRUE) {
         $sql = "UPDATE auth SET email='" . $email . "',password='" . $password . "' WHERE auth_id=" . $_SESSION['login']['auth_id'];
         if ($conn->query($sql) === TRUE) {
-            $sql = "SELECT auth.auth_id,email,password, role.name AS role , image, user.name FROM auth INNER JOIN role ON auth.role_id = role.role_id INNER JOIN user ON user.auth_id = auth.auth_id where email='$email' AND password='$password'";
+            $sql = "SELECT auth.auth_id,email,password, role.name AS role , image, user.name, user.user_id FROM auth INNER JOIN role ON auth.role_id = role.role_id INNER JOIN user ON user.auth_id = auth.auth_id where email='$email' AND password='$password'";
             $result = $conn->query($sql);
             $_SESSION['login'] = $result->fetch_assoc();
-            echo '<script>sessionStorage.setItem("db_status","200");</script>';
+            echo "<script>
+
+            var user = {
+                'status': true,
+                'role': '" . $_SESSION['login']['role'] . "',
+                'image': '" . $_SESSION['login']['image'] . "',
+                'user_id': '" . $_SESSION['login']['user_id'] . "',
+            };
+                sessionStorage.setItem('login', JSON.stringify(user) );
+            sessionStorage.setItem('db_status','200');
+            </script>";
         } else {
             echo '<script>sessionStorage.setItem("db_status","400");</script>';
         }
@@ -45,7 +55,7 @@ function update_data($conn, $name, $email, $password, $image)
 function update_dp()
 {
     $target_dir  = "../Resource/dp/";
-    $target_file = $target_dir . $_SESSION['login']['name'] . ".png";
+    $target_file = $target_dir . $_SESSION['login']['name'] . "_" . rand() . ".png";
     move_uploaded_file($_FILES["dp_path"]['tmp_name'], $target_file);
     return $target_file;
 }

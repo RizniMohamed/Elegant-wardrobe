@@ -13,6 +13,10 @@ function loginValidate() {
     return false;
 }
 
+//Get database status code
+// 200 - success
+// 400 - bad request
+// 403 - forbidden request
 function getDBStatus() {
     if ((sessionStorage.getItem('db_status') != null) && (sessionStorage.getItem('db_status') != 0)) {
         return parseInt(sessionStorage.getItem('db_status'))
@@ -21,7 +25,7 @@ function getDBStatus() {
 }
 
 function isLogin() {
-    if (sessionStorage.getItem('login') != null && (sessionStorage.getItem('login') != false)) {
+    if (sessionStorage.getItem('login') != null ) {
         if (JSON.parse(sessionStorage.getItem('login'))['status']) return true;
     }
     if (getDBStatus() == 404) { //Not found
@@ -34,7 +38,7 @@ function isLogin() {
 }
 
 function logout() {
-    sessionStorage.setItem('login', false)
+    sessionStorage.removeItem('login')
     showHomeOnly();
     window.location.reload();
 }

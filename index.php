@@ -27,10 +27,10 @@ session_start();
     <link rel="stylesheet" href="./Style/main.css">
 
     <!-- Js for do operations with pre defiend functions -->
+    <script src="./JS/cart.js"></script>
     <script src="./JS/login.js"></script>
     <script src="./JS/register.js"></script>
     <script src="./JS/profile.js"></script>
-    <script src="./JS/cart.js"></script>
 
 
 </head>

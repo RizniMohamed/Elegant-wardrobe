@@ -30,6 +30,7 @@
 
         <div class=" mt-1  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400">
             <p class="w-full ml-10 text-md font-bold ">Name</p>
+            <p class="w-full ml-10 text-md font-bold ">Unit Price</p>
             <p class="w-full ml-10 text-md font-bold ">Quantity</p>
             <p class="w-full ml-10 text-md font-bold ">Price</p>
         </div>
