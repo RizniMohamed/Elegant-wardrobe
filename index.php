@@ -105,11 +105,11 @@ session_start();
 
 
     <!-- Js for do operations with ids -->
-    <script src="./JS/cart.js"></script>
     <script src="./JS/login.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/register.js"></script>
     <script src="./JS/profile.js"></script>
+    <script src="./JS/cart.js"></script>
     <script>
         router();
         task_status();

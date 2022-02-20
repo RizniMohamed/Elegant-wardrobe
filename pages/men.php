@@ -42,11 +42,20 @@
 
                 while ($row = $result->fetch_assoc()) {
                     echo '
-                   <div class="w-56 m-2 bg-gray-300 p-2 rounded-md">
+                   <div class="w-56 m-2 bg-gray-300 p-2 rounded-md flex flex-col justify-around">
                         <img src="' . $row['image'] . '" class="w-52 h-56">
                         <h5 class="mt-2 font-semibold">' . $row['name'] . '</h5>
                         <h5 class="mt-1">LKR ' . $row['unit_price'] . '</h5>
-                        <button class="my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1">Add to cart</button>
+                        <div>
+                            <select id="size_' . $row['product_id'] . '" class="w-full py-1 mt-2 bg-gray-200" id="size">
+                            <option class="select disable hidden" value="Size">Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            </select>
+                            <input type="number" id="quantitiy_' . $row['product_id'] . '" min="1" max="5" class="w-full px-1 my-2 bg-gray-200" placeholder="Quantity">
+                            <input onclick="addToCart(' . $row['product_id'] . ',\'size_' . $row['product_id'] . '\',\'quantitiy_' . $row['product_id'] . '\',\'' . $row['name'] . '\',\'' . $row['unit_price'] . '\');" type="button"  value=" Add to cart" class="cursor-pointer my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1" >
+                        </div>
                     </div>
                    ';
                 }
@@ -59,11 +68,20 @@
 
                 while ($row = $result->fetch_assoc()) {
                     echo '
-                   <div class="w-56 m-2 bg-gray-300 p-2 rounded-md">
+                   <div class="w-56 m-2 bg-gray-300 p-2 rounded-md flex flex-col justify-around">
                         <img src="' . $row['image'] . '" class="w-52 h-56">
                         <h5 class="mt-2 font-semibold">' . $row['name'] . '</h5>
                         <h5 class="mt-1">LKR ' . $row['unit_price'] . '</h5>
-                        <button class="my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1">Add to cart</button>
+                        <div>
+                            <select id="size_' . $row['product_id'] . '" class="w-full py-1 mt-2 bg-gray-200" id="size">
+                            <option class="select disable hidden" value="Size">Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            </select>
+                            <input type="number" id="quantitiy_' . $row['product_id'] . '" min="1" max="5" class="w-full px-1 my-2 bg-gray-200" placeholder="Quantity">
+                            <input onclick="addToCart(' . $row['product_id'] . ',\'size_' . $row['product_id'] . '\',\'quantitiy_' . $row['product_id'] . '\',\'' . $row['name'] . '\',\'' . $row['unit_price'] . '\');" type="button"  value=" Add to cart" class="cursor-pointer my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1" >
+                        </div>
                     </div>
                    ';
                 }
@@ -76,11 +94,20 @@
 
                 while ($row = $result->fetch_assoc()) {
                     echo '
-                   <div class="w-56 m-2 bg-gray-300 p-2 rounded-md">
+                   <div class="w-56 m-2 bg-gray-300 p-2 rounded-md flex flex-col justify-around">
                         <img src="' . $row['image'] . '" class="w-52 h-56">
                         <h5 class="mt-2 font-semibold">' . $row['name'] . '</h5>
                         <h5 class="mt-1">LKR ' . $row['unit_price'] . '</h5>
-                        <button class="my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1">Add to cart</button>
+                        <div>
+                            <select id="size_' . $row['product_id'] . '" class="w-full py-1 mt-2 bg-gray-200" id="size">
+                            <option class="select disable hidden" value="Size">Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            </select>
+                            <input type="number" id="quantitiy_' . $row['product_id'] . '" min="1" max="5" class="w-full px-1 my-2 bg-gray-200" placeholder="Quantity">
+                            <input onclick="addToCart(' . $row['product_id'] . ',\'size_' . $row['product_id'] . '\',\'quantitiy_' . $row['product_id'] . '\',\'' . $row['name'] . '\',\'' . $row['unit_price'] . '\');" type="button"  value=" Add to cart" class="cursor-pointer my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1" >
+                        </div>
                     </div>
                    ';
                 }
