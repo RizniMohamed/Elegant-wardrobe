@@ -34,41 +34,40 @@
 
 
         <div class=" mt-1  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400">
-            <p class="w-full ml-10 text-md font-bold ">ID</p>
+            <p class="w-52 ml-10 text-md font-bold ">ID</p>
             <p class="w-full ml-10 text-md font-bold ">Name</p>
             <p class="w-full ml-10 text-md font-bold ">Date</p>
             <p class="w-full ml-10 text-md font-bold ">Status</p>
         </div>
-        <div class=" mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default">
-            <p class="w-full ml-10 text-md font-semibold ">001</p>
-            <p class="w-full ml-10 text-md font-semibold ">trouser thirt</p>
-            <p class="w-full ml-10 text-md font-semibold ">2000.10.20</p>
-            <p class="w-full ml-10 text-md font-semibold ">Ongoing</p>
-        </div>
-        <div class=" mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default">
-            <p class="w-full ml-10 text-md font-semibold ">002</p>
-            <p class="w-full ml-10 text-md font-semibold ">bag watch cap thsirtt bag watch cap thsirtt bag watch cap thsirtt bag watch cap thsirtt</p>
-            <p class="w-full ml-10 text-md font-semibold ">2010.10.10</p>
-            <p class="w-full ml-10 text-md font-semibold ">delivered</p>
-        </div>
-        <div class=" mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default">
-            <p class="w-full ml-10 text-md font-semibold ">002</p>
-            <p class="w-full ml-10 text-md font-semibold ">bag watch cap thsirtt</p>
-            <p class="w-full ml-10 text-md font-semibold ">2010.10.10</p>
-            <p class="w-full ml-10 text-md font-semibold ">delivered</p>
-        </div>
-        <div class=" mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default">
-            <p class="w-full ml-10 text-md font-semibold ">002</p>
-            <p class="w-full ml-10 text-md font-semibold ">bag watch cap thsirtt</p>
-            <p class="w-full ml-10 text-md font-semibold ">2010.10.10</p>
-            <p class="w-full ml-10 text-md font-semibold ">delivered</p>
-        </div>
-        <div class=" mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default">
-            <p class="w-full ml-10 text-md font-semibold ">002</p>
-            <p class="w-full ml-10 text-md font-semibold ">bag watch cap thsirtt</p>
-            <p class="w-full ml-10 text-md font-semibold ">2010.10.10</p>
-            <p class="w-full ml-10 text-md font-semibold ">delivered</p>
-        </div>
+        <?php
+        $user_id = $_SESSION['login']['user_id'];
+
+
+        $sql = "SELECT *, GROUP_CONCAT(product.name) AS items FROM orders 
+                            INNER JOIN order_product as op ON orders.order_id = op.order_id
+                            INNER JOIN product ON op.product_id = product.product_id
+                            WHERE user_id = 1 GROUP BY orders.order_id";
+        $result = $conn->query($sql);
+        if ($result) {
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $status = ($row['status'] == '0') ? "Process" : "Delivered";
+                    echo  '
+                    <div class=" mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default">
+                        <p class="w-52 ml-10 text-md font-semibold ">' . $row['order_id'] . '</p>
+                        <p class="w-full ml-10 text-md font-semibold ">' . str_replace(',', '<br>', $row['items']) . '</p>
+                        <p class="w-full ml-10 text-md font-semibold ">' . $row['date'] . '</p>
+                        <p class="w-full ml-10 text-md font-semibold ">' . $status . '</p>
+                    </div>
+                    ';
+                }
+            }
+        }
+
+
+        ?>
+
+
 
     </div>
 

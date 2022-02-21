@@ -53,8 +53,8 @@
                             <option value="M">M</option>
                             <option value="L">L</option>
                             </select>
-                            <input type="number" id="quantitiy_' . $row['product_id'] . '" min="1" max="5" class="w-full px-1 my-2 bg-gray-200" placeholder="Quantity">
-                            <input onclick="addToCart(' . $row['product_id'] . ',\'size_' . $row['product_id'] . '\',\'quantitiy_' . $row['product_id'] . '\',\'' . $row['name'] . '\',\'' . $row['unit_price'] . '\');" type="button"  value=" Add to cart" class="cursor-pointer my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1" >
+                            <input type="number" id="quantitiy_' . $row['product_id'] . '" min="1" max=' . $row['quantity'] . ' class="w-full px-1 my-2 bg-gray-200" placeholder="Quantity">
+                            <input onclick="isLogin()?addToCart(' . $row['product_id'] . ',\'size_' . $row['product_id'] . '\',\'quantitiy_' . $row['product_id'] . '\',\'' . str_replace("'", "", $row['name'])  . '\',\'' . $row['unit_price'] . '\'):showLogin();" type="button"  value=" Add to cart" class="cursor-pointer my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1" >
                         </div>
                     </div>
                    ';
@@ -79,8 +79,8 @@
                             <option value="M">M</option>
                             <option value="L">L</option>
                             </select>
-                            <input type="number" id="quantitiy_' . $row['product_id'] . '" min="1" max="5" class="w-full px-1 my-2 bg-gray-200" placeholder="Quantity">
-                            <input onclick="addToCart(' . $row['product_id'] . ',\'size_' . $row['product_id'] . '\',\'quantitiy_' . $row['product_id'] . '\',\'' . $row['name'] . '\',\'' . $row['unit_price'] . '\');" type="button"  value=" Add to cart" class="cursor-pointer my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1" >
+                            <input type="number" id="quantitiy_' . $row['product_id'] . '" min="1" max=' . $row['quantity'] . ' class="w-full px-1 my-2 bg-gray-200" placeholder="Quantity">
+                            <input onclick="isLogin()?addToCart(' . $row['product_id'] . ',\'size_' . $row['product_id'] . '\',\'quantitiy_' . $row['product_id'] . '\',\'' . str_replace("'", "", $row['name'])  . '\',\'' . $row['unit_price'] . '\'):showLogin();" type="button"  value=" Add to cart" class="cursor-pointer my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1" >
                         </div>
                     </div>
                    ';
@@ -105,8 +105,8 @@
                             <option value="M">M</option>
                             <option value="L">L</option>
                             </select>
-                            <input type="number" id="quantitiy_' . $row['product_id'] . '" min="1" max="5" class="w-full px-1 my-2 bg-gray-200" placeholder="Quantity">
-                            <input onclick="addToCart(' . $row['product_id'] . ',\'size_' . $row['product_id'] . '\',\'quantitiy_' . $row['product_id'] . '\',\'' . $row['name'] . '\',\'' . $row['unit_price'] . '\');" type="button"  value=" Add to cart" class="cursor-pointer my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1" >
+                            <input type="number" id="quantitiy_' . $row['product_id'] . '" min="1" max=' . $row['quantity'] . ' class="w-full px-1 my-2 bg-gray-200" placeholder="Quantity">
+                            <input onclick="isLogin()?addToCart(' . $row['product_id'] . ',\'size_' . $row['product_id'] . '\',\'quantitiy_' . $row['product_id'] . '\',\'' . str_replace("'", "", $row['name'])  . '\',\'' . $row['unit_price'] . '\'):showLogin();" type="button"  value=" Add to cart" class="cursor-pointer my-2 w-full bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1" >
                         </div>
                     </div>
                    ';
