@@ -1,6 +1,6 @@
 <!-- Clothing  -->
 <div class="flex flex-col justify-center mx-10 mb-10 bg-gray-300 p-5 rounded-lg">
-    <button onclick="showAddProduct()" class="font-bold text-lg mb-5 flex">Clothing <i class="fa-solid fa-circle-plus text-2xl translate-y-1 ml-2 hover:text-green-600 cursor-pointer"></i></button>
+    <button onclick="showAddProduct(1,1)" class="font-bold text-lg mb-5 flex">Clothing <i class="fa-solid fa-circle-plus text-2xl translate-y-1 ml-2 hover:text-green-600 cursor-pointer"></i></button>
     <div class=" mt-1  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400">
         <p class=" w-20 text-md text-center font-bold ">Image</p>
         <p class=" w-96 text-md text-center font-bold ">Name</p>

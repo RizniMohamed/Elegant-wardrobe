@@ -32,6 +32,7 @@ session_start();
     <script src="./JS/admin.js"></script>
     <script src="./JS/register.js"></script>
     <script src="./JS/profile.js"></script>
+    <script src="./JS/addProduct.js"></script>
 
 
 </head>
@@ -115,6 +116,7 @@ session_start();
     <script src="./JS/register.js"></script>
     <script src="./JS/profile.js"></script>
     <script src="./JS/cart.js"></script>
+    <script src="./JS/addProduct.js"></script>
 
     <script>
         router();
@@ -126,6 +128,7 @@ session_start();
             if (sessionStorage.getItem("task") == "profile") profileStatus();
             if (sessionStorage.getItem("task") == "cart") cartStatus();
             if (sessionStorage.getItem("task") == "admin") adminStatus();
+            if (sessionStorage.getItem("task") == "addProduct") addProductStatus();
         }
     </script>
 </body>

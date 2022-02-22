@@ -1,5 +1,9 @@
     <script>
-        function showAddProduct() {
+        function showAddProduct(cat_id, subcat_id) {
+
+            document.getElementById('productAdd_cat_id').value = cat_id;
+            document.getElementById('productAdd_subcat_id').value = subcat_id;
+
             let model = document.getElementById('addProductModel');
             model.classList.replace('hidden', 'block')
         }
@@ -8,7 +12,16 @@
             let model = document.getElementById('addProductModel');
             model.classList.replace('block', 'hidden')
         }
+
+        function setProductImg() {
+            console.log(document.getElementById('productAdd_new_pic_path').value);
+            const url = require('url');
+            url.fileURLToPath(url)
+            alert('asd')
+            document.getElementById('product image').src = document.getElementById('productAdd_new_pic_path').value;
+        }
     </script>
+
 
     <body>
         <div class="fixed z-10 inset-0 overflow-y-auto">
@@ -19,33 +32,37 @@
 
                 <div class="inline-block align-bottom bg-gray-100 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                     <div class="min-h-full flex items-center justify-center py-8  ">
-                        <div class="max-w-md w-full space-y-8">
-                            <div>
-                                <div class="flex justify-center">
-                                    <span class="text-black font-black text-3xl">Elegant wardrobe</span>
-                                </div>
-                                <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Add product</h2>
-                            </div>
-                            
-                            <form onsubmit="return false" action="../../PHP/admin.php" method="POST" enctype="multipart/form-data" class=" mt-1 items-center  rounded-md py-2 shadow-xl flex flex-col  w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default">
-                        
-                                <label for="new_pic_path">
-                                    <img class=" rounded-lg  w-20 cursor-pointer border-0 hover:border-4" src="" alt="product image">
-                                </label>
-                                
-                                <textarea id="product_id_name" name="admin_product_name" cols=20 rows=1 
-                                class=" rounded-md bg-gray-300 p-2 w-96 text-start  text-md font-semibold "></textarea>
-                                <input id="product_id_quantity" name="admin_product_quantity" type="number" min=0   
-                                class=" rounded-md bg-gray-300 p-2 w-20 text-center  text-md font-semibold  ">
-                                <input id="product_id_price'" name="admin_product_unit_price" type="number" min=0 
-                                class=" rounded-md bg-gray-300 p-2 w-20 text-center  text-md font-semibold  ">
+                        <div class="max-w-md w-full">
 
-                                <input name="admin_btn_delete" type="submit" value="Save"  class="cursor-pointer my-2 w-20 bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm py-1 ">
-                            
+                            <h2 class="mt-2 text-center text-2xl font-bold text-gray-900">Add product</h2>
+
+                            <form onsubmit="return addProductValidate(productAdd_new_pic_path,productAdd_id_name,productAdd_id_quantity,productAdd_id_price)" action="../../PHP/productAdd.php" method="POST" enctype="multipart/form-data" class="mt-10 flex flex-col items-center">
+
+                                <input id="productAdd_cat_id" name="productAdd_cat_id" type="text" class="hidden">
+                                <input id="productAdd_subcat_id" name="productAdd_subcat_id" type="text" class="hidden">
+                                <input onchange="setProductImg()" type="file" name="productAdd_new_pic_path" id="productAdd_new_pic_path" class=" rounded-md py-1 mt-2 w-full text-start text-gray-400  text-md font-semibold 
+                                 file:mr-4 file:py-1 file:px-4
+                                 file:rounded-md file:border-0
+                                 file:bg-gray-300
+                                 file:text-gray-400
+                                 placeholder:text-gray-800
+                                 hover:file:bg-gray-400
+                                 hover:file:text-gray-800
+                                 hover:file:cursor-pointer
+                                ">
+
+                                <textarea placeholder="Product name" id="productAdd_id_name" name="productAdd_product_name" cols=20 rows=1 class=" rounded-md bg-gray-300 p-1 mt-2 w-full text-start  text-md font-semibold "></textarea>
+                                <input placeholder="Quantity" id="productAdd_id_quantity" name="productAdd_product_quantity" type="number" min=0 class=" rounded-md bg-gray-300 p-1 mt-2 w-full text-start  text-md font-semibold  ">
+                                <input placeholder="Unit price" id="productAdd_id_price" name="productAdd_product_unit_price" type="number" min=0 class=" rounded-md bg-gray-300 p-1 mt-2 w-full text-start  text-md font-semibold  ">
+
+                                <input name="admin_btn_delete" type="submit" value="Save" class=" w-full cursor-pointer mt-5 p-2  bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm ">
+
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </body>
