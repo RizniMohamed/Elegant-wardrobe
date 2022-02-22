@@ -13,6 +13,7 @@
         hideTC();
         hidePP();
         hideAdmin();
+        hideSearch();
 
     }
 

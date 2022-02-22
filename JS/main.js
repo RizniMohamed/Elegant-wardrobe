@@ -11,6 +11,7 @@ function router() {
     if (sessionStorage.getItem("currentPage") == "tc") showTC();
     if (sessionStorage.getItem("currentPage") == "returnPolicy") showReturnPolicy();
     if (sessionStorage.getItem("currentPage") == "admin") showAdmin();
+    if (sessionStorage.getItem("currentPage") == "search") showSearch();
 }
 
 // Only show admin tab when admin logged in

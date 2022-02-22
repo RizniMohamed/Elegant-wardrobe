@@ -29,8 +29,8 @@
                                 echo '
                                     <form onsubmit=" return profileValidate();" class=" mb-5 " action="../PHP/profile.php" method="POST" enctype="multipart/form-data">
                                         <div class="rounded-md shadow-sm flex flex-col">
-                                            <input type="file" name="dp_path" id="productAdd_new_pic_path" 
-                                            class=" rounded-md py-1 my-2 w-full text-start text-gray-400  text-md font-semibold 
+                                            <input type="file" name="dp_path" id="productAdd_new_pic_path"  value="'. $_SESSION['login']['image'].'"
+                                            class=" rounded-md py-1 my-2 text-start text-gray-400  text-md font-semibold 
                                                     file:mr-4 file:py-1 file:px-4
                                                     file:rounded-md file:border-0
                                                     file:bg-white

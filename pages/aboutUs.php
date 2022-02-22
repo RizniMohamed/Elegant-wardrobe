@@ -13,6 +13,8 @@
         hideTC();
         hidePP();
         hideAdmin();
+        hideSearch();
+
     }
 
     function hideAboutUs() {

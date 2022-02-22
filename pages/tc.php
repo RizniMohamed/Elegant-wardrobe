@@ -13,6 +13,7 @@
         hideAboutUs();
         hidePP();
         hideAdmin();
+        hideSearch();
 
 
     }

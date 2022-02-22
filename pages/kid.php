@@ -13,6 +13,7 @@
         hideTC();
         hidePP();
         hideAdmin();
+        hideSearch();
 
     }
 
@@ -39,7 +40,7 @@
                 $_POST['btnKidClothing'] = null;
                 $sql = "SELECT * FROM product WHERE cat_id=3 AND subcat_id=1";
                 $result = $conn->query($sql);
-             
+
                 while ($row = $result->fetch_assoc()) {
                     echo '
                    <div class="w-56 m-2 bg-gray-300 p-2 rounded-md flex flex-col justify-around">

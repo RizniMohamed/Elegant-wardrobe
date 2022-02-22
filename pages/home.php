@@ -3,7 +3,7 @@
         let model = document.getElementById('homePage');
         model.classList.replace('hidden', 'block')
     }
-    
+
     function showHomeOnly() {
         sessionStorage.setItem("currentPage", "home");
         showHome();
@@ -17,6 +17,8 @@
         hideTC();
         hidePP();
         hideAdmin();
+        hideSearch();
+
     }
 
 

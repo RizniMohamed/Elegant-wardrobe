@@ -13,6 +13,8 @@
         hideTC();
         hidePP();
         hideAboutUs();
+        hideSearch();
+
 
     }
 

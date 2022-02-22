@@ -18,7 +18,6 @@ function addToCart(id, size_id, quantitiy_id, name, unit_price) {
         final_cart_list = [...new Map(cart.map(v => [v.id, v])).values()] // prevent duplicate entries
         sessionStorage.setItem('cart', JSON.stringify(final_cart_list));
         showSuccess("Product added successfully");
-        console.log(final_cart_list);
     } else {
         if (size == "Size") {
             showError("Select a size")
@@ -30,8 +29,8 @@ function addToCart(id, size_id, quantitiy_id, name, unit_price) {
 }
 
 //Display cart list
-
-function createItem(product_name, product_unitPrice, product_quantity, product_price) {
+var rollNo = 1;
+function createItem(product_id,product_name, product_unitPrice, product_quantity, product_price) {
     const div = document.createElement("div");
     div.className = " mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default"
 
@@ -55,26 +54,45 @@ function createItem(product_name, product_unitPrice, product_quantity, product_p
     const text_price = document.createTextNode(product_price);
     price.appendChild(text_price);
 
+    const btnDelete = document.createElement("button");
+    btnDelete.className = "text-white w-20 -translate-x-3  font-bold bg-gray-600 my-2 py-1 text-sm rounded-md hover:bg-gray-800 "
+    const text_delete = document.createTextNode("Delete");
+    btnDelete.onclick = () => {
+        let list = JSON.parse(sessionStorage.getItem('cart'))
+        list = list.filter((i) =>  i.id != product_id)
+        sessionStorage.setItem('cart', JSON.stringify(list))
+        window.location.reload();
+
+    }
+    btnDelete.appendChild(text_delete);
+    
+    const btn = document.createElement('div')
+    btn.className = "w-full ml-10 flex "
+    btn.appendChild(btnDelete);
+
+
     div.appendChild(name)
     div.appendChild(unit_price)
     div.appendChild(quantity)
     div.appendChild(price)
+    div.appendChild(btn)
 
     cart_items.appendChild(div);
 }
 
 var cart_items = document.getElementById('cart_items');
+
 var cart_list = JSON.parse(sessionStorage.getItem('cart'));
 var cart_total = 0;
 if (cart_list != null && cart_items != null) {
     cart_list.map(e => {
         e.tot_price = (e.unit_price * e.quantity)
-        createItem(e.name, e.unit_price, e.quantity, e.tot_price);
+        createItem(e.id,e.name, e.unit_price, e.quantity, e.tot_price);
         cart_total += e.tot_price;
         return e;
     });
 
-    createItem("Total", "", "", cart_total);
+    createItem("Total", "", "","", cart_total);
 
     var cart_form = document.createElement("form");
     cart_form.className = "bg-gray-600  mt-5 py-2 rounded-md hover:bg-gray-800"

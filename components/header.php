@@ -15,8 +15,11 @@
                         <input id="navAdmin" type="submit" onclick="showAdmin()" name="btnAdminWomen" class="hidden cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" value="ADMIN PANEL">
                     </form>
                 </div>
-                <input class="px-2 rounded w-2/5 mr-5" type="text" placeholder="&#xF002; Search" id="txtsearch" name="txtsearch" style="font-family:Arial, FontAwesome">
-                <i onclick=" isLogin() ?showCart(): showLogin();window.location.reload()" class="fa-solid fa-cart-shopping text-white cursor-pointer  mr-5 animate-bounce"></i>
+                <form onsubmit="showSearch();" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="w-2/5 mr-5 ">
+                    <input class=" px-2 w-full rounded " type="text" placeholder="&#xF002; Search" id="txtsearch" name="txtsearch" style="font-family:Arial, FontAwesome">
+                </form>
+               
+                <i onclick=" isLogin()?showCart(): showLogin();" class="fa-solid fa-cart-shopping text-white cursor-pointer  mr-5 animate-bounce"></i>
 
                 <button onclick="isLogin()?showProfile():showLogin();" type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <img id="dpImage" src="" class="h-8 w-8 rounded-full bg-gray-400 p-0.5 hover:bg-gray-500" alt="DPIMAGE">
@@ -71,8 +74,6 @@
             tab.addEventListener('mouseover', () => showDropdown(id))
             tab.addEventListener('mouseout', () => hideDropdown(id))
         })
-
-        
     </script>
 
 </body>

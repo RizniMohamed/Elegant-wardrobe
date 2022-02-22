@@ -1,6 +1,7 @@
 <?php
 require_once "./PHP/config.php";
 session_start();
+if(!isset($_POST['txtsearch'])) $_POST['txtsearch'] = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,6 +76,9 @@ session_start();
     </div>
     <div id="adminPage" class="hidden">
         <?php require_once "./pages/admin.php" ?>
+    </div>
+    <div id="searchPage" class="hidden">
+        <?php require_once "./pages/search.php" ?>
     </div>
 
     <!-- Components -->

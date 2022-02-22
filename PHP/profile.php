@@ -10,19 +10,20 @@ $password = $_POST['profile_password'];
 if ($email != $_SESSION['login']['email']) {
     $sql = "SELECT email FROM auth WHERE email='" . $email . "'";
     if ($conn->query($sql)->num_rows > 0) {
-        echo $conn->error;
         echo '<script > sessionStorage.setItem("db_status","403");</script>';
     } else {
-        update_data($conn, $name, $email, $password, update_dp());
-        update_dp();
+        $image_path = ($_FILES["dp_path"]['name'] == "") ? $_SESSION['login']['image'] : update_dp();
+        update_data($conn, $name, $email, $password, $image_path);
         echo '<script>history.back()</script>';
     }
 } else {
-    update_data($conn, $name, $email, $password, update_dp());
-    update_dp();
-    echo '<script>history.back();</script>';
+    $image_path = ($_FILES["dp_path"]['name'] == "") ? $_SESSION['login']['image'] : update_dp();
+    update_data($conn, $name, $email, $password, $image_path);
+    echo '<script>history.back()</script>';
 }
+
 echo $conn->error;
+
 function update_data($conn, $name, $email, $password, $image)
 {
     echo $conn->error;
