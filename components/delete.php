@@ -29,7 +29,7 @@
                                     <button onclick="hideDelete()" type="submit" class=" w-24 flex justify-center py-1 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none mr-2">
                                         No
                                     </button>
-                                    <button onclick="hideDelete()" type="submit" class=" w-24 flex justify-center py-1 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-red-700 focus:outline-none">
+                                    <button onclick="hideDelete()" type=" submit" class=" w-24 flex justify-center py-1 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-red-700 focus:outline-none">
                                         Yes
                                     </button>
                                 </div>

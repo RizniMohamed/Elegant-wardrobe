@@ -29,6 +29,7 @@ session_start();
     <!-- Js for do operations with pre defiend functions -->
     <script src="./JS/cart.js"></script>
     <script src="./JS/login.js"></script>
+    <script src="./JS/admin.js"></script>
     <script src="./JS/register.js"></script>
     <script src="./JS/profile.js"></script>
 
@@ -100,19 +101,32 @@ session_start();
     <div id="profileModel" class="hidden">
         <?php require_once "./components/profile.php" ?>
     </div>
+    <div id="addProductModel" class="hidden">
+        <?php require_once "./components/productAdd.php" ?>
+    </div>
 
     <?php require_once "./components/footer.php" ?>
 
 
     <!-- Js for do operations with ids -->
     <script src="./JS/login.js"></script>
+    <script src="./JS/admin.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/register.js"></script>
     <script src="./JS/profile.js"></script>
     <script src="./JS/cart.js"></script>
+
     <script>
         router();
         task_status();
+
+        //task process
+        function task_status() {
+            if (sessionStorage.getItem("task") == "register") registerStatus();
+            if (sessionStorage.getItem("task") == "profile") profileStatus();
+            if (sessionStorage.getItem("task") == "cart") cartStatus();
+            if (sessionStorage.getItem("task") == "admin") adminStatus();
+        }
     </script>
 </body>
 
