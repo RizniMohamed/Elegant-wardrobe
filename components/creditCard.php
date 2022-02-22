@@ -21,29 +21,51 @@
                     <div class="min-h-full flex items-center justify-center py-8  ">
                         <div class="max-w-md w-full space-y-8">
                             <div>
-                                <div class="flex justify-center">
-                                    <span class="text-black font-black text-3xl">Elegant wardrobe</span>
-                                </div>
-                                <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Card Payment</h2>
+                                <h2 class="my-6 text-center text-2xl font-bold text-gray-900">Payment Methods</h2>
                             </div>
-                            <form class=" space-y-6" action="#" method="POST">
-                                <div class="rounded-md shadow-sm -space-y-px">
+
+                            <form action="../PHP/cart.php" method="post" class="">
+
+                                <div class="flex w-full justify-between mb-5 mt-14">
+                                    <!-- VISA -->
+                                    <div class="py-1 px-2 rounded-full bg-gray-300 flex w-44  justify-center items-center">
+                                        <input onclick="
+                                        divVisa.classList.replace('hidden','block');
+                                        ccNumber.required = true;
+                                        ccCVC.required = true;
+                                        ccExp.required = true;
+                                        " type="radio" id="VISA" name="pm" value="visa" class="cursor-pointer" required>
+                                        <label for="VISA" class="font-semibold text-md mx-1 cursor-pointer">VISA</label>
+                                    </div>
+
+                                    <!-- Cash on delivery -->
+                                    <div class="py-1 px-2 rounded-full bg-gray-300 flex w-44 justify-center   items-center">
+                                        <input onclick="
+                                        divVisa.classList.replace('block','hidden');
+                                        ccNumber.required = false;
+                                        ccCVC.required = false;
+                                        ccExp.required = false;
+                                        " type="radio" id="COD" name="pm" value="cod" class="cursor-pointer" required>
+                                        <label for="COD" class="font-semibold text-md mx-1 cursor-pointer ">Cash On Delivery</label>
+                                    </div>
+
+                                </div>
+
+                                <div id="divVisa" class="rounded-md shadow-sm mb-4 hidden">
                                     <input id="ccNumber" name="ccNumber" type="number" autocomplete="cc-number" required class="mb-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md  sm:text-sm" placeholder="Card number">
                                     <div class="flex">
-                                        <input id="ccExp" name="ccExp" type="month" autocomplete="cc-exp" required class="mt-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm mr-2" placeholder="Expire date">
-                                        <input id="ccCVC" name="ccCVC" type="number" autocomplete="cc-csc" required class="mt-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="CVC">
+                                        <input id="ccExp" name="ccExp" type="month" autocomplete="cc-exp" required class="mb-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm mr-2" placeholder="Expire date">
+                                        <input id="ccCVC" name="ccCVC" type="number" autocomplete="cc-csc" required class="mb-2 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="CVC">
                                     </div>
                                 </div>
 
-                                <div>
-                                    <button onclick="hideCreditCard()" type="submit" class=" w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
-                                        Pay
-                                    </button>
-                                </div>
+                                <input type="text" name="cart_order_list" id="cart_order_list" class="hidden">
+                                <input onclick="sessionStorage.setItem('task', 'cart')" type="submit" value="Pay" class=" cursor-pointer w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </body>

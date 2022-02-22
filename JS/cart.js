@@ -30,7 +30,7 @@ function addToCart(id, size_id, quantitiy_id, name, unit_price) {
 
 //Display cart list
 var rollNo = 1;
-function createItem(product_id,product_name, product_unitPrice, product_quantity, product_price) {
+function createItem(product_id, product_name, product_unitPrice, product_quantity, product_price) {
     const div = document.createElement("div");
     div.className = " mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default"
 
@@ -51,24 +51,26 @@ function createItem(product_id,product_name, product_unitPrice, product_quantity
 
     const price = document.createElement("p");
     price.className = "w-full ml-10 text-md font-semibold "
+    if (product_name == "Total") price.className = "w-full ml-10 text-md font-bold "
     const text_price = document.createTextNode(product_price);
     price.appendChild(text_price);
 
+    
     const btnDelete = document.createElement("button");
     btnDelete.className = "text-white w-20 -translate-x-3  font-bold bg-gray-600 my-2 py-1 text-sm rounded-md hover:bg-gray-800 "
     const text_delete = document.createTextNode("Delete");
     btnDelete.onclick = () => {
         let list = JSON.parse(sessionStorage.getItem('cart'))
-        list = list.filter((i) =>  i.id != product_id)
+        list = list.filter((i) => i.id != product_id)
         sessionStorage.setItem('cart', JSON.stringify(list))
         window.location.reload();
 
     }
     btnDelete.appendChild(text_delete);
-    
+
     const btn = document.createElement('div')
     btn.className = "w-full ml-10 flex "
-    btn.appendChild(btnDelete);
+    if (product_name != "Total")  btn.appendChild(btnDelete);
 
 
     div.appendChild(name)
@@ -87,35 +89,28 @@ var cart_total = 0;
 if (cart_list != null && cart_items != null) {
     cart_list.map(e => {
         e.tot_price = (e.unit_price * e.quantity)
-        createItem(e.id,e.name, e.unit_price, e.quantity, e.tot_price);
+        createItem(e.id, e.name, e.unit_price, e.quantity, e.tot_price);
         cart_total += e.tot_price;
         return e;
     });
+    
 
-    createItem("Total", "", "","", cart_total);
+    createItem("","Total", "", "",  cart_total);
 
-    var cart_form = document.createElement("form");
-    cart_form.className = "bg-gray-600  mt-5 py-2 rounded-md hover:bg-gray-800"
-    cart_form.action = "/PHP/cart.php"
-    cart_form.method = "POST"
+
 
     var cart_form_input = document.createElement("input");
-    cart_form_input.type = "submit"
-    cart_form_input.onsubmit = sessionStorage.setItem('task', "cart")
+    cart_form_input.type = "button"
+    cart_form_input.onclick = () => showCreditCard()
     cart_form_input.name = "order"
-    cart_form_input.className = "cursor-pointer w-full text-white font-bold "
+    cart_form_input.className = "w-full text-white cursor-pointer font-bold bg-gray-600 my-2 py-2 text-sm rounded-md hover:bg-gray-800 "
     cart_form_input.value = "Order now"
 
-    var cart_form_input_temp = document.createElement("input");
-    cart_form_input_temp.type = "text"
-    cart_form_input_temp.name = "cart_order_list"
-    cart_form_input_temp.className = " hidden w-full text-white font-bold "
+    var cart_form_input_temp = document.getElementById("cart_order_list");
     cart_form_input_temp.value = JSON.stringify(cart_list)
 
-    cart_form.appendChild(cart_form_input);
-    cart_form.appendChild(cart_form_input_temp);
 
-    cart_items.appendChild(cart_form);
+    cart_items.appendChild(cart_form_input);
 }
 
 
