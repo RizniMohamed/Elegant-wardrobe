@@ -19,7 +19,7 @@ function addProductValidate(image, name, quantity, price) {
 
 function addProductStatus() {
     if (getDBStatus() == 200) { //succcess
-        showSuccess("product updated successfully")
+        showSuccess("product created successfully")
     }
     if (getDBStatus() == 400) { // bad request
         showAdmin();

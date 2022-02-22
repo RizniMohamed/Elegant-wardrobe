@@ -13,13 +13,6 @@
             model.classList.replace('block', 'hidden')
         }
 
-        function setProductImg() {
-            console.log(document.getElementById('productAdd_new_pic_path').value);
-            const url = require('url');
-            url.fileURLToPath(url)
-            alert('asd')
-            document.getElementById('product image').src = document.getElementById('productAdd_new_pic_path').value;
-        }
     </script>
 
 
@@ -40,7 +33,7 @@
 
                                 <input id="productAdd_cat_id" name="productAdd_cat_id" type="text" class="hidden">
                                 <input id="productAdd_subcat_id" name="productAdd_subcat_id" type="text" class="hidden">
-                                <input onchange="setProductImg()" type="file" name="productAdd_new_pic_path" id="productAdd_new_pic_path" class=" rounded-md py-1 mt-2 w-full text-start text-gray-400  text-md font-semibold 
+                                <input type="file" name="productAdd_new_pic_path" id="productAdd_new_pic_path" class=" rounded-md py-1 mt-2 w-full text-start text-gray-400  text-md font-semibold 
                                  file:mr-4 file:py-1 file:px-4
                                  file:rounded-md file:border-0
                                  file:bg-gray-300

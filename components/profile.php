@@ -22,9 +22,6 @@
                         <div class="max-w-md w-full space-y-8">
                             <div class="flex flex-col text-center justify-center">
                                 <span class="text-black font-black text-3xl">Elegant wardrobe</span>
-                                <label for="openDP" class=" flex self-center block">
-                                    <img id="profile_dp" class=" mt-5 rounded-full w-32 h-32 border border-gray-600 p-1 shadow-xl hover:bg-gray-200 cursor-pointer " src="" alt="prfile">
-                                </label>
                             </div>
 
                             <?php
@@ -32,7 +29,18 @@
                                 echo '
                                     <form onsubmit=" return profileValidate();" class=" mb-5 " action="../PHP/profile.php" method="POST" enctype="multipart/form-data">
                                         <div class="rounded-md shadow-sm flex flex-col">
-                                            <input type="file" name="dp_path" id="openDP" class="hidden">
+                                            <input type="file" name="dp_path" id="productAdd_new_pic_path" 
+                                            class=" rounded-md py-1 my-2 w-full text-start text-gray-400  text-md font-semibold 
+                                                    file:mr-4 file:py-1 file:px-4
+                                                    file:rounded-md file:border-0
+                                                    file:bg-white
+                                                    file:text-gray-500
+                                                    placeholder:text-gray-800
+                                                    hover:file:bg-gray-200
+                                                    hover:file:text-gray-800
+                                                    hover:file:cursor-pointer
+                                            ">
+
                                             <input value="' . $_SESSION['login']['name'] . '" class="p-2 mb-2 rounded-md  " type="text" name="profile_name" id="profile_name" placeholder="Name">
                                             <input value="' . $_SESSION['login']['email'] . '" class="p-2 mb-2 rounded-md  " type="email" name="profile_email" id="profile_email" placeholder="Email address">
                                             <input value="' . $_SESSION['login']['password'] . '" class="p-2 mb-2 rounded-md  " type="text" name="profile_password" id="profile_password" placeholder="password">
