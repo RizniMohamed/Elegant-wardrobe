@@ -39,9 +39,9 @@
         </div>
 
         <div class="flex justify-center w-2/5 h-12 self-center">
-            <img class="mx-5" src="https://www.nolimit.lk/storage/general/bestweb.png" alt="">
-            <img src="https://www.nolimit.lk/storage/general/visa.png" alt="">
-            <img class="mx-5" src="https://www.nolimit.lk/storage/general/american-express.png" alt="">
+            <img class="mx-5" src="../Resource/bestweb.png" alt="">
+            <img src="../Resource/visa.png" alt="">
+            <img class="mx-5" src="../Resource/american-express.png" alt="">
         </div>
     </div>
 

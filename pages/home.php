@@ -30,11 +30,6 @@
 </script>
 
 <body>
-    <!-- <button onclick="showLogin()" class="bg-gray-400 rounded p-5 m-5 hover:bg-gray-800 hover:text-white h-96">Login</button>
-    <button onclick="showCreditCard()" class="bg-gray-400 rounded p-5 m-5 hover:bg-gray-800 hover:text-white h-96">Credit card</button>
-    <button onclick="showDelete()" class="bg-gray-400 rounded p-5 m-5 hover:bg-gray-800 hover:text-white h-96">Delete</button>
-    <button onclick="showSuccess()" class="bg-gray-400 rounded p-5 m-5 hover:bg-gray-800 hover:text-white h-96">Success</button>
-    <button onclick="showError()" class="bg-gray-400 rounded p-5 m-5 hover:bg-gray-800 hover:text-white h-96">Error</button> -->
 
     <!-- Carousal -->
     <div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-light relative" data-bs-ride="carousel">
@@ -48,10 +43,10 @@
         <div class="carousel-inner relative w-full overflow-hidden">
 
             <div class="carousel-item active relative float-left w-full">
-                <img src="https://www.nolimit.lk/storage/womens-web.jpg" class=" block w-full" alt="Camera" />
+                <img src="../Resource/banner1.jpg" class=" block w-full" alt="Camera" />
             </div>
             <div class="carousel-item relative float-left w-full">
-                <img src="https://www.nolimit.lk/storage/mens-1.jpg" class=" block w-full" alt="Camera" />
+                <img src="../Resource/banner2.jpg" class=" block w-full" alt="Camera" />
             </div>
         </div>
 
@@ -72,13 +67,13 @@
         <h1 class="font-bold text-4xl my-10">Categories</h1>
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" class="flex">
             <button type="submit" name="btnWomenClothing">
-                <img onclick="showWomen();" src="https://www.nolimit.lk/storage/banners/Ladies.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 cursor-pointer" alt="">
+                <img onclick="showWomen();" src="../Resource/cat_women.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 cursor-pointer" alt="">
             </button>
             <button type="submit" name="btnMenClothing">
-                <img onclick="showMen();" src="https://www.nolimit.lk/storage/banners/Gents.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 mx-7 cursor-pointer" alt="">
+                <img onclick="showMen();" src="../Resource/cat_men.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 mx-7 cursor-pointer" alt="">
             </button>
             <button type="submit" name="btnKidClothing">
-                <img onclick="showKid();" src="https://www.nolimit.lk/storage/banners/Kids.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 cursor-pointer" alt="">
+                <img onclick="showKid();" src="../Resource/cat_kid.jpg" class="w-96 h-52 hover:scale-110 transition duration-700 cursor-pointer" alt="">
             </button>
         </form>
 
