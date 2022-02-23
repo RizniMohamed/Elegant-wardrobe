@@ -30,7 +30,7 @@
                                 <div class="rounded-md shadow-sm -space-y-px flex flex-col">
                                     <input class="p-2" type="text" name="name" id="name" placeholder="Name" required>
                                     <br><input class="p-2 " type="email" name="email" id="email" placeholder="Email address" required>
-                                    <br><textarea class="p-2 " name="message" id="message" placeholder="Message" cols="30" rows="5"></textarea>
+                                    <br><textarea class="p-2 " name="message" id="message" placeholder="Message" cols="30" rows="5" required></textarea>
                                 </div>
 
                                 <div>

@@ -34,12 +34,7 @@
         </h1>
 
 
-        <div class=" mt-1  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400">
-            <p class="w-52 ml-10 text-md font-bold ">ID</p>
-            <p class="w-full ml-10 text-md font-bold ">Name</p>
-            <p class="w-full ml-10 text-md font-bold ">Date</p>
-            <p class="w-full ml-10 text-md font-bold ">Status</p>
-        </div>
+
         <?php
         $user_id = $_SESSION['login']['user_id'];
 
@@ -47,10 +42,20 @@
         $sql = "SELECT *, GROUP_CONCAT(product.name) AS items FROM orders 
                             INNER JOIN order_product as op ON orders.order_id = op.order_id
                             INNER JOIN product ON op.product_id = product.product_id
-                            WHERE user_id = 1 GROUP BY orders.order_id";
+                            WHERE user_id =$user_id GROUP BY orders.order_id";
         $result = $conn->query($sql);
         if ($result) {
             if ($result->num_rows > 0) {
+
+                echo '
+                    <div class=" mt-1  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400">
+                        <p class="w-52 ml-10 text-md font-bold ">ID</p>
+                        <p class="w-full ml-10 text-md font-bold ">Name</p>
+                        <p class="w-full ml-10 text-md font-bold ">Date</p>
+                        <p class="w-full ml-10 text-md font-bold ">Status</p>
+                    </div>
+                ';
+
                 while ($row = $result->fetch_assoc()) {
                     $status = ($row['status'] == '0') ? "Process" : "Delivered";
                     echo  '
@@ -62,6 +67,10 @@
                     </div>
                     ';
                 }
+            } else {
+                echo '
+                        <h1 class="flex text-lg cursor-default justify-center h-96 font-bold items-center self-center w-full">No Orders Found</h1>
+                    ';
             }
         }
 

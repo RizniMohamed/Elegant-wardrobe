@@ -25,7 +25,7 @@
                         window.location.reload();
                     } else {
                         showLogin();
-                    }" class="fa-solid fa-cart-shopping text-white cursor-pointer  mr-5 animate-bounce"></i>
+                    }" class="fa-solid fa-cart-shopping text-white cursor-pointer  mr-5 "></i>
 
                 <button onclick="isLogin()?showProfile():showLogin();" type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <img id="dpImage" src="" class="h-8 w-8 rounded-full bg-gray-400 p-0.5 hover:bg-gray-500" alt="DPIMAGE">
