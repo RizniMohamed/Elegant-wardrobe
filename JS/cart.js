@@ -55,7 +55,7 @@ function createItem(product_id, product_name, product_unitPrice, product_quantit
     const text_price = document.createTextNode(product_price);
     price.appendChild(text_price);
 
-    
+
     const btnDelete = document.createElement("button");
     btnDelete.className = "text-white w-20 -translate-x-3  font-bold bg-gray-600 my-2 py-1 text-sm rounded-md hover:bg-gray-800 "
     const text_delete = document.createTextNode("Delete");
@@ -70,7 +70,7 @@ function createItem(product_id, product_name, product_unitPrice, product_quantit
 
     const btn = document.createElement('div')
     btn.className = "w-full ml-10 flex "
-    if (product_name != "Total")  btn.appendChild(btnDelete);
+    if (product_name != "Total") btn.appendChild(btnDelete);
 
 
     div.appendChild(name)
@@ -93,15 +93,19 @@ if (cart_list != null && cart_items != null) {
         cart_total += e.tot_price;
         return e;
     });
-    
 
-    createItem("","Total", "", "",  cart_total);
-
-
+    createItem("", "Total", "", "", cart_total);
 
     var cart_form_input = document.createElement("input");
     cart_form_input.type = "button"
-    cart_form_input.onclick = () => showCreditCard()
+    cart_form_input.onclick = () => {
+        if (JSON.parse(sessionStorage.getItem('login'))['address'] == "") {
+            showProfile();
+            showError("Address hasn't set yet")
+        } else {
+            showCreditCard()
+        }
+    }
     cart_form_input.name = "order"
     cart_form_input.className = "w-full text-white cursor-pointer font-bold bg-gray-600 my-2 py-2 text-sm rounded-md hover:bg-gray-800 "
     cart_form_input.value = "Order now"

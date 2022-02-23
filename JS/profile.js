@@ -1,24 +1,19 @@
 function profileValidate() {
-    let email = (document.getElementById('profile_email').value)
-    let password = (document.getElementById('profile_password').value)
-    let name = (document.getElementById('profile_name').value)
-    if (email.length == 0 || password.length == 0 || name.length == 0) {
-        if (name.length == 0) {
 
+    let name = document.getElementById('profile_name').value;
+    let email = document.getElementById('profile_email').value;
+    let password = document.getElementById('profile_password').value;
+    let address = document.getElementById('profile_address').value;
+
+    if (email.length == 0 || password.length == 0 || name.length == 0 || address.length == 0) {
+        if (name.length == 0)
             showError('Name cannot be empty');
-            console.log(name);
-        }
-        if (name.length != 0 && email.length == 0) {
-
+        if (name.length != 0 && email.length == 0)
             showError('Email cannot be empty')
-            console.log(email);
-        }
-
-        if (name.length != 0 && email.length != 0 && password.length == 0) {
-
+        if (name.length != 0 && email.length != 0 && password.length == 0)
             showError('Password cannot be empty')
-            console.log(password);
-        }
+        if (name.length != 0 && email.length != 0 && password.length != 0 && address.length == 0)
+            showError('Address cannot be empty')
 
     } else {
         sessionStorage.setItem('task', "profile");

@@ -1,7 +1,7 @@
 <?php
 require_once "./PHP/config.php";
 session_start();
-if(!isset($_POST['txtsearch'])) $_POST['txtsearch'] = "";
+if (!isset($_POST['txtsearch'])) $_POST['txtsearch'] = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,7 @@ if(!isset($_POST['txtsearch'])) $_POST['txtsearch'] = "";
     <!-- fontawsome icon (internet required) -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <script src="./Style/icons/js/all.min.js"></script>
-    
+
     <!-- css  -->
     <link rel="stylesheet" href="./Style/main.css">
 
