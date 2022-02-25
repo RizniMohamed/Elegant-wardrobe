@@ -27,14 +27,11 @@
                                 <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">Contact Us</h2>
                             </div>
                             <form onsubmit="showSuccess('Mail sent successfully');" class=" space-y-6" action="#" method="#">
-                                <div class="rounded-md shadow-sm -space-y-px flex flex-col">
-                                    <input class="p-2" type="text" name="name" id="name" placeholder="Name" required>
-                                    <br><input class="p-2 " type="email" name="email" id="email" placeholder="Email address" required>
-                                    <br><textarea class="p-2 " name="message" id="message" placeholder="Message" cols="30" rows="5" required></textarea>
-                                </div>
-
-                                <div>
-                                    <input type="submit" value="Send" class="cursor-pointer w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
+                                <div class="rounded-md shadow-sm flex flex-col">
+                                    <input class="p-2 mb-2 border-2 border-gray-200" type="text" name="name" id="name" placeholder="Name" required>
+                                    <input class="p-2 mb-2 border-2 border-gray-200 " type="email" name="email" id="email" placeholder="Email address" required>
+                                    <textarea class="p-2 mb-2 border-2 border-gray-200 " name="message" id="message" placeholder="Message" cols="30" rows="5" required></textarea>
+                                    <input type="submit" value="Send" class="cursor-pointer mt-4 w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
                                 </div>
                             </form>
                         </div>
