@@ -14,8 +14,6 @@
         hidePP();
         hideAdmin();
         hideSearch();
-
-
     }
 
     function hideTC() {
@@ -27,7 +25,7 @@
 <body>
 
 
-    <div class="flex flex-col justify-center m-10 bg-gray-300 p-5 rounded-lg">
+    <div class="flex flex-col justify-center m-10 p-5 rounded-lg">
 
         <h1 class="font-bold text-lg mb-5">Terms & Conditions</h1>
         <p class="text-justify font-bold">

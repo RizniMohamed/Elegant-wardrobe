@@ -34,7 +34,7 @@
                                         ccNumber.required = true;
                                         ccCVC.required = true;
                                         ccExp.required = true;
-                                        " type="radio" id="VISA" name="pm" value="visa" class="cursor-pointer" required>
+                                        " type="radio" id="VISA" name="rb_payment" value="2" class="cursor-pointer" required>
                                         <label for="VISA" class="font-semibold text-md mx-1 cursor-pointer">VISA</label>
                                     </div>
 
@@ -45,7 +45,7 @@
                                         ccNumber.required = false;
                                         ccCVC.required = false;
                                         ccExp.required = false;
-                                        " type="radio" id="COD" name="pm" value="cod" class="cursor-pointer" required>
+                                        " type="radio" id="COD" name="rb_payment" value="1" class="cursor-pointer" required>
                                         <label for="COD" class="font-semibold text-md mx-1 cursor-pointer ">Cash On Delivery</label>
                                     </div>
 

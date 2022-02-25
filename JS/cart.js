@@ -115,6 +115,15 @@ if (cart_list != null && cart_items != null) {
 
 
     cart_items.appendChild(cart_form_input);
+}else{
+
+    document.getElementById('order_header').classList.add('hidden')
+    const nof = document.createElement("h1");
+    nof.className = "flex text-lg cursor-default justify-center h-96 font-bold items-center self-center w-full "
+    const text_nof = document.createTextNode("No products Found");
+    nof.appendChild(text_nof);
+    cart_items.appendChild(nof);
+
 }
 
 

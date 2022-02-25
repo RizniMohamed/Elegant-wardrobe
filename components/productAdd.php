@@ -36,17 +36,17 @@
                                 <input type="file" name="productAdd_new_pic_path" id="productAdd_new_pic_path" class=" rounded-md py-1 mt-2 w-full text-start text-gray-400  text-md font-semibold 
                                  file:mr-4 file:py-1 file:px-4
                                  file:rounded-md file:border-0
-                                 file:bg-gray-300
+                                 file:bg-white
                                  file:text-gray-400
                                  placeholder:text-gray-800
-                                 hover:file:bg-gray-400
+                                 hover:file:bg-gray-200
                                  hover:file:text-gray-800
                                  hover:file:cursor-pointer
                                 ">
 
-                                <textarea placeholder="Product name" id="productAdd_id_name" name="productAdd_product_name" cols=20 rows=1 class=" rounded-md bg-gray-300 p-1 mt-2 w-full text-start  text-md font-semibold "></textarea>
-                                <input placeholder="Quantity" id="productAdd_id_quantity" name="productAdd_product_quantity" type="number" min=0 class=" rounded-md bg-gray-300 p-1 mt-2 w-full text-start  text-md font-semibold  ">
-                                <input placeholder="Unit price" id="productAdd_id_price" name="productAdd_product_unit_price" type="number" min=0 class=" rounded-md bg-gray-300 p-1 mt-2 w-full text-start  text-md font-semibold  ">
+                                <textarea placeholder="Product name" id="productAdd_id_name" name="productAdd_product_name" cols=20 rows=1 class=" rounded-md border-2 border-gray-200 p-1 mt-2 w-full text-start  text-md font-semibold "></textarea>
+                                <input placeholder="Quantity" id="productAdd_id_quantity" name="productAdd_product_quantity" type="number" min=0 class=" rounded-md border-2 border-gray-200 p-1 mt-2 w-full text-start  text-md font-semibold  ">
+                                <input placeholder="Unit price" id="productAdd_id_price" name="productAdd_product_unit_price" type="number" min=0 class=" rounded-md border-2 border-gray-200 p-1 mt-2 w-full text-start  text-md font-semibold  ">
 
                                 <input name="admin_btn_delete" type="submit" value="Save" class=" w-full cursor-pointer mt-5 p-2  bg-gray-600 hover:bg-gray-800 text-white font-bold rounded-md text-sm ">
 

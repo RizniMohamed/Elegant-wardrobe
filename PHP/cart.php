@@ -4,12 +4,14 @@ require_once '../PHP/config.php';
 $cart = json_decode($_POST['cart_order_list']);
 $order_tot_price = 0;
 $user_id = $_SESSION['login']['user_id'];
+$payment = $_POST['rb_payment'];
 
 foreach ($cart as $key) {
     $order_tot_price += ($key->tot_price);
 }
 
-$sql = "INSERT INTO orders(date, status, total_price, user_id) VALUES (SYSDATE(),0,$order_tot_price,$user_id)";
+$payment = $_POST['rb_payment'];
+$sql = "INSERT INTO orders(date, status, total_price, payment_id, user_id) VALUES (SYSDATE(),0,$order_tot_price,$payment,$user_id)";
 
 if ($conn->query($sql) === TRUE) {
     $last_id = $conn->insert_id;

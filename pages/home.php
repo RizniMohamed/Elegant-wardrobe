@@ -21,8 +21,6 @@
 
     }
 
-
-
     function hideHome() {
         let model = document.getElementById('homePage');
         model.classList.replace('block', 'hidden')

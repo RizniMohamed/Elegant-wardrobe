@@ -27,7 +27,7 @@
 <body>
 
 
-    <div class="m-5 bg-gray-200 rounded-md p-5">
+    <div style="min-height: 31.5vh;" class="m-5 rounded-md p-5">
 
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" class="flex justify-center">
             <input type="submit" name="btnAdminWomen" class="font-bold text-gray-600 text-2xl mb-5      cursor-pointer hover:text-gray-800" value="Women">
