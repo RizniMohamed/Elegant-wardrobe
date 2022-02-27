@@ -32,7 +32,7 @@ function addToCart(id, size_id, quantitiy_id, name, unit_price) {
 var rollNo = 1;
 function createItem(product_id, product_name, product_unitPrice, product_quantity, product_price) {
     const div = document.createElement("div");
-    div.className = " mt-1 items-center  rounded-md py-2 shadow-xl flex w-full justify-around bg-gray-400 hover:bg-white hover-text-black cursor-default"
+    div.className = " mt-1 items-center  rounded-md py-2 flex w-full justify-around border-2 border-gray-200 hover:bg-gray-100 hover-text-black cursor-default"
 
     const name = document.createElement("p");
     name.className = "w-full ml-10 text-md font-semibold "
@@ -86,7 +86,7 @@ var cart_items = document.getElementById('cart_items');
 
 var cart_list = JSON.parse(sessionStorage.getItem('cart'));
 var cart_total = 0;
-if (cart_list != null && cart_items != null) {
+if (cart_list != null && cart_items != null && cart_items != []) {
     cart_list.map(e => {
         e.tot_price = (e.unit_price * e.quantity)
         createItem(e.id, e.name, e.unit_price, e.quantity, e.tot_price);
@@ -115,14 +115,17 @@ if (cart_list != null && cart_items != null) {
 
 
     cart_items.appendChild(cart_form_input);
-}else{
+} else {
 
-    document.getElementById('order_header').classList.add('hidden')
-    const nof = document.createElement("h1");
-    nof.className = "flex text-lg cursor-default justify-center h-96 font-bold items-center self-center w-full "
-    const text_nof = document.createTextNode("No products Found");
-    nof.appendChild(text_nof);
-    cart_items.appendChild(nof);
+    let order_header = document.getElementById('order_header')
+    if (order_header != null) {
+        document.getElementById('order_header').classList.add('hidden')
+        const nof = document.createElement("h1");
+        nof.className = "flex text-lg cursor-default justify-center h-96 font-bold items-center self-center w-full border-2 border-gray-200 rounded-md"
+        const text_nof = document.createTextNode("No products Found");
+        nof.appendChild(text_nof);
+        cart_items.appendChild(nof);
+    }
 
 }
 

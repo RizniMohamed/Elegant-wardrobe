@@ -1,8 +1,4 @@
 function adminValidate(name, quantity, price) {
-    console.log(name.value.value);
-    console.log(quantity.value);
-    console.log(price.value);
-
     if (name.value.length == 0 || quantity.value == 0 || price.value == 0) {
         if (name.value.length == 0) {
             showError('name cannot be empty');
@@ -11,7 +7,7 @@ function adminValidate(name, quantity, price) {
             showError('Quantity cannot be empty')
         }
 
-        if (name.value.length != 0 && quantity.value != 0 && price.value != 0) {
+        if (name.value.length != 0 && quantity.value != 0 && price.value == 0) {
             showError('Price cannot be empty')
         }
 
