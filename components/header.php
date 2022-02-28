@@ -12,7 +12,7 @@
                         <input type="submit" onclick="showMen();" id="men" name="btnMenClothing" class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" value="MEN">
                         <input type="submit" onclick="showKid();" id="kid" name="btnKidClothing" class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" value="KID">
                         <input type="button" onclick="showContactUs()" class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" value="CONTACT US">
-                        <input id="navAdmin" type="submit" onclick="showAdmin()" name="btnAdminWomen" class="hidden cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" value="ADMIN PANEL">
+                        <input id="navAdmin" type="submit" onclick="showAdmin();" name="btnAdminWomen" class="hidden cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" value="ADMIN PANEL">
                     </form>
                 </div>
                 <form onsubmit="showSearch();" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="w-2/5 mr-5 ">

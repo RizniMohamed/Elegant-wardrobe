@@ -14,8 +14,6 @@
         hidePP();
         hideAboutUs();
         hideSearch();
-
-
     }
 
     function hideAdmin() {
@@ -25,7 +23,6 @@
 </script>
 
 <body>
-
 
     <div style="min-height: 31.5vh;" class="m-5 rounded-md p-5">
 
@@ -51,10 +48,6 @@
         }
 
         ?>
-
-
-
-
 
     </div>
 

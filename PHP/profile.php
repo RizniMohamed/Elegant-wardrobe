@@ -15,8 +15,8 @@ if ($email != $_SESSION['login']['email']) {
     } else {
         $image_path = ($_FILES["dp_path"]['name'] == "") ? $_SESSION['login']['image'] : update_dp();
         update_data($conn, $name, $email, $password, $image_path, $address);
-        echo '<script>history.back()</script>';
     }
+    echo '<script>history.back()</script>';
 } else {
     $image_path = ($_FILES["dp_path"]['name'] == "") ? $_SESSION['login']['image'] : update_dp();
     update_data($conn, $name, $email, $password, $image_path, $address);
